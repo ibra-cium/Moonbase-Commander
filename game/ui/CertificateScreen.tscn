@@ -1,0 +1,173 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/certificate_screen.gd" id="1_cert"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://assets/icons/rocket_launch.svg" id="3_rocket"]
+[ext_resource type="Texture2D" path="res://assets/icons/star.svg" id="4_star"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cert_card"]
+content_margin_left = 22.0
+content_margin_top = 18.0
+content_margin_right = 22.0
+content_margin_bottom = 18.0
+bg_color = Color(0.0784314, 0.0980392, 0.145098, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.94902, 0.756863, 0.305882, 0.85)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[node name="CertificateScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_cert")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0470588, 0.0745098, 0.97)
+
+[node name="SafeMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="CenterContainer" type="CenterContainer" parent="SafeMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPanel" type="PanelContainer" parent="SafeMargin/CenterContainer"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cert_card")
+
+[node name="RootVBox" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HeaderRow" type="HBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="RocketIcon" type="TextureRect" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/HeaderRow"]
+modulate = Color(0.94902, 0.756863, 0.305882, 1)
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_rocket")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 24
+text = "Junior Astronaut Training Complete"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="RankRow" type="HBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="RankStar" type="TextureRect" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/RankRow"]
+modulate = Color(0.94902, 0.756863, 0.305882, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RankLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/RankRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 20
+text = "Rank: Moonbase Commander"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="SafeMargin/CenterContainer/CardPanel/RootVBox"]
+layout_mode = 2
+
+[node name="CertScroll" type="ScrollContainer" parent="SafeMargin/CenterContainer/CardPanel/RootVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="BodyVBox" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/CertScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="StarsGrid" type="HFlowContainer" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/CertScroll/BodyVBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 8
+alignment = 1
+
+[node name="LearnedHeaderLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/CertScroll/BodyVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.454902, 0.72549, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "You learned:"
+
+[node name="LearnedVBox" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/CertScroll/BodyVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CardsLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/CertScroll/BodyVBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 15
+text = "Science Cards: 0 / 29"
+
+[node name="DateLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/CertScroll/BodyVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 0.87, 0.92, 1)
+theme_override_font_sizes/font_size = 14
+text = "2026-11-12"
+horizontal_alignment = 1
+
+[node name="FooterLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/CertScroll/BodyVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 12
+text = "Moonbase Commander · Team Space-ArenaX · NASA Space Apps Challenge 2026 · Not an official NASA certificate."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="FooterButtons" type="HBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/RootVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="SafeMargin/CenterContainer/CardPanel/RootVBox/FooterButtons"]
+custom_minimum_size = Vector2(200, 64)
+layout_mode = 2
+focus_mode = 0
+text = "Back to map"
+

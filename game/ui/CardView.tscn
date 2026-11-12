@@ -1,0 +1,138 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/card_view.gd" id="1_cv"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://ui/SourceTag.tscn" id="3_sourcetag"]
+[ext_resource type="Texture2D" path="res://assets/icons/science.svg" id="4_icon"]
+
+[node name="CardView" type="CanvasLayer"]
+layer = 19
+visible = false
+script = ExtResource("1_cv")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Backdrop" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.04, 0.07, 0.78)
+
+[node name="SafeMargin" type="MarginContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Root/SafeMargin"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CardPanel" type="PanelContainer" parent="Root/SafeMargin/CenterContainer"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+
+[node name="OuterVBox" type="VBoxContainer" parent="Root/SafeMargin/CenterContainer/CardPanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CategoryBand" type="PanelContainer" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox"]
+layout_mode = 2
+
+[node name="BandHBox" type="HBoxContainer" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/CategoryBand"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CardIcon" type="TextureRect" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/CategoryBand/BandHBox"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CategoryLabel" type="Label" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/CategoryBand/BandHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "MOON"
+
+[node name="BodyMargin" type="MarginContainer" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 20
+
+[node name="BodyVBox" type="VBoxContainer" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="TitleLabel" type="Label" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 24
+text = "Science Card"
+autowrap_mode = 3
+
+[node name="BodyScroll" type="ScrollContainer" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="FactLabel" type="Label" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox/BodyScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 19
+text = ""
+autowrap_mode = 3
+
+[node name="SourceRow" type="HBoxContainer" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SourceNameLabel" type="Label" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox/SourceRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 15
+text = "Source: NASA"
+autowrap_mode = 3
+
+[node name="CardSourceTag" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox/SourceRow" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AlbumHintLabel" type="Label" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.976471, 0.796078, 0.278431, 1)
+theme_override_font_sizes/font_size = 14
+text = "Saved to your Moon Science Album! Open it anytime from the Mission Map."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CloseRow" type="HBoxContainer" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="Root/SafeMargin/CenterContainer/CardPanel/OuterVBox/BodyMargin/BodyVBox/CloseRow"]
+custom_minimum_size = Vector2(180, 64)
+layout_mode = 2
+focus_mode = 0
+text = "Close"
+

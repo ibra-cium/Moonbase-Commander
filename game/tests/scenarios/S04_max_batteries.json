@@ -1,0 +1,27 @@
+{
+  "id": "S04_max_batteries",
+  "cargo": {
+    "solar": 30,
+    "battery": 60,
+    "reactor": 0,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 4,
+    "food": 5,
+    "shield": 10
+  },
+  "seed": 1,
+  "rule": "REST",
+  "force": {
+    "storm_day": 10,
+    "recycler_day": 99,
+    "meteoroid_day": 0
+  },
+  "expect": {
+    "outcome": "EVAC_CO2",
+    "end_day": 21,
+    "stars": 0,
+    "root": "ROOT_NIGHT_ENERGY"
+  }
+}
+

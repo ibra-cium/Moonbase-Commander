@@ -1,0 +1,2 @@
+﻿Moon: NASA's Scientific Visualization Studio, CGI Moon Kit (Lunar Reconnaissance Orbiter data).
+Earth: NASA Earth Observatory, Blue Marble Next Generation.

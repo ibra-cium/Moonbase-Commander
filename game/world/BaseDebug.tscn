@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://world/base_debug.gd" id="1_debug"]
+[ext_resource type="PackedScene" path="res://world/Base.tscn" id="2_base"]
+[ext_resource type="PackedScene" path="res://world/Crew.tscn" id="3_crew"]
+[ext_resource type="PackedScene" path="res://world/CameraRig.tscn" id="4_cam"]
+[ext_resource type="Script" path="res://world/ground.gd" id="5_ground"]
+[ext_resource type="PackedScene" path="res://world/SkyRig.tscn" id="6_sky"]
+
+[node name="BaseDebug" type="Node3D"]
+script = ExtResource("1_debug")
+
+[node name="SkyRig" parent="." instance=ExtResource("6_sky")]
+
+[node name="Ground" type="Node3D" parent="."]
+script = ExtResource("5_ground")
+
+[node name="Base" parent="." instance=ExtResource("2_base")]
+
+[node name="Crew" parent="." instance=ExtResource("3_crew")]
+
+[node name="CameraRig" parent="." instance=ExtResource("4_cam")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 650.0
+offset_bottom = 220.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "BaseDebug: S07"
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "FPS: 60 | Draw calls: -"
+
+[node name="HBoxCargo" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnS01" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxCargo"]
+layout_mode = 2
+text = "S01 (Solar Only)"
+
+[node name="BtnS07" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxCargo"]
+layout_mode = 2
+text = "S07 (Smart)"
+
+[node name="BtnNoGH" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxCargo"]
+layout_mode = 2
+text = "No GH"
+
+[node name="BtnOverBat" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxCargo"]
+layout_mode = 2
+text = "16 Bat"
+
+[node name="BtnS08" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxCargo"]
+layout_mode = 2
+text = "S08 (Max Base)"
+
+[node name="BtnScale" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxCargo"]
+layout_mode = 2
+text = "Toggle 3D Scale"
+
+[node name="HBoxStep" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnStep" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxStep"]
+layout_mode = 2
+text = "Step 1 Day [Space]"
+
+[node name="BtnDay16" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxStep"]
+layout_mode = 2
+text = "Jump Day 16 (Blackout)"
+
+[node name="BtnEvac" type="Button" parent="CanvasLayer/Panel/VBoxContainer/HBoxStep"]
+layout_mode = 2
+text = "Evacuate Crew [E]"
+
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxCargo/BtnS01" to="." method="_on_btn_s01_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxCargo/BtnS07" to="." method="_on_btn_s07_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxCargo/BtnNoGH" to="." method="_on_btn_no_gh_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxCargo/BtnOverBat" to="." method="_on_btn_over_battery_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxCargo/BtnS08" to="." method="_on_btn_s08_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxCargo/BtnScale" to="." method="_on_btn_toggle_scale_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxStep/BtnStep" to="." method="_on_btn_step_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxStep/BtnDay16" to="." method="_on_btn_day16_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/HBoxStep/BtnEvac" to="." method="_on_btn_evac_pressed"]

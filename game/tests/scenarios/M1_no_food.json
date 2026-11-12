@@ -1,0 +1,25 @@
+{
+  "id": "M1_no_food",
+  "title": "Mission 1 — No food packed",
+  "mission": "M1",
+  "cargo": {
+    "solar": 10,
+    "battery": 0,
+    "reactor": 0,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 4,
+    "food": 0,
+    "shield": 0
+  },
+  "seed": 1,
+  "rule": "REST",
+  "force": {},
+  "expect": {
+    "outcome": "EVAC_FOOD",
+    "end_day": 1,
+    "stars": 0,
+    "root": "ROOT_SUPPLY"
+  }
+}
+

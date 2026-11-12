@@ -1,0 +1,25 @@
+{
+  "id": "M2_no_repair",
+  "title": "Mission 2 — Broken recycler not repaired",
+  "mission": "M2",
+  "cargo": {
+    "solar": 20,
+    "battery": 4,
+    "reactor": 2,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 2,
+    "food": 5,
+    "shield": 10
+  },
+  "seed": 1,
+  "rule": "NOFIX",
+  "force": {},
+  "expect": {
+    "outcome": "EVAC_WATER",
+    "end_day": 9,
+    "stars": 0,
+    "root": "ROOT_REPAIR"
+  }
+}
+

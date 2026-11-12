@@ -4,8 +4,7 @@ This is Team Space-ArenaX's project repository for NASA Space Apps Challenge 202
 
 ## Before the hackathon (now until 12 November)
 
-- Only documents go in: concept, research notes, sources, timeline.
-- **No game code before the hackathon starts.** All code is written on 13–14 November.
+Our mentor approved building the game before the event, so game code goes in from 9 November 2026.
 
 ## During the hackathon (13–14 November)
 
@@ -20,6 +19,7 @@ This is Team Space-ArenaX's project repository for NASA Space Apps Challenge 202
 
 - **Every number in the game needs a NASA source** in [data/sources.md](data/sources.md).
 - **Log every AI tool you use** in [docs/ai-usage.md](docs/ai-usage.md): the tool, what it did, and the prompt.
+- Every AI coding task saves its prompt in docs/ai-prompts/.
 - **Credit every outside asset** (fonts, sounds, libraries, NASA images) in the README credits.
 - **No NASA logos**, and nothing that suggests NASA made or endorses this project.
 - **No photos, names or voices of anyone under 18** anywhere in this repo.

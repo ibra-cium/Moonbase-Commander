@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://world/world.gd" id="1_world"]
+[ext_resource type="Script" path="res://world/ground.gd" id="2_ground"]
+[ext_resource type="Script" path="res://world/rocks.gd" id="3_rocks"]
+[ext_resource type="PackedScene" path="res://world/SkyRig.tscn" id="4_skyrig"]
+[ext_resource type="PackedScene" path="res://world/CameraRig.tscn" id="5_camrig"]
+[ext_resource type="PackedScene" path="res://world/Base.tscn" id="6_base"]
+[ext_resource type="PackedScene" path="res://world/Crew.tscn" id="7_crew"]
+[ext_resource type="PackedScene" path="res://world/Lander.tscn" id="8_lander"]
+[ext_resource type="PackedScene" path="res://world/Effects.tscn" id="9_effects"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_world")
+
+[node name="Ground" type="Node3D" parent="."]
+script = ExtResource("2_ground")
+
+[node name="Rocks" type="Node3D" parent="."]
+script = ExtResource("3_rocks")
+
+[node name="Base" parent="." instance=ExtResource("6_base")]
+
+[node name="Crew" parent="." instance=ExtResource("7_crew")]
+
+[node name="SkyRig" parent="." instance=ExtResource("4_skyrig")]
+
+[node name="CameraRig" parent="." instance=ExtResource("5_camrig")]
+
+[node name="Lander" parent="." instance=ExtResource("8_lander")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.5, 7.5)
+
+[node name="Effects" parent="." instance=ExtResource("9_effects")]

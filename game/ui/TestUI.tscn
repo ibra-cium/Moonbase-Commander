@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://dpox64s8g13hy"]
+
+[ext_resource type="Script" path="res://ui/test_ui.gd" id="1_tui01"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://ui/Gauge.tscn" id="3_gauge"]
+[ext_resource type="PackedScene" path="res://ui/SourceTag.tscn" id="4_sourcetag"]
+[ext_resource type="PackedScene" path="res://ui/EventPopup.tscn" id="5_popup"]
+[ext_resource type="PackedScene" path="res://ui/SourcesScreen.tscn" id="6_sources"]
+
+[node name="TestUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_tui01")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.07, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="HeaderLabel" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 28
+text = "UI Widgets Gallery & Test Scene"
+
+[node name="SectionGauges" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 20
+text = "1. Gauges (Normal, Warn, Critical Pulse)"
+
+[node name="WidgetsGrid" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="GaugePower" parent="Margin/VBox/WidgetsGrid" instance=ExtResource("3_gauge")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GaugeWater" parent="Margin/VBox/WidgetsGrid" instance=ExtResource("3_gauge")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GaugeAlert" parent="Margin/VBox/WidgetsGrid" instance=ExtResource("3_gauge")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SectionTags" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 20
+text = "2. Source Tags (Tap ⓘ to inspect metadata)"
+
+[node name="TagsRow" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="CardCargo" type="PanelContainer" parent="Margin/VBox/TagsRow"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/TagsRow/CardCargo"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox/TagsRow/CardCargo/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Margin/VBox/TagsRow/CardCargo/Margin/HBox"]
+layout_mode = 2
+text = "Cargo Limit"
+
+[node name="TagCargo" parent="Margin/VBox/TagsRow/CardCargo/Margin/HBox" instance=ExtResource("4_sourcetag")]
+layout_mode = 2
+
+[node name="CardSolar" type="PanelContainer" parent="Margin/VBox/TagsRow"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/TagsRow/CardSolar"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox/TagsRow/CardSolar/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Margin/VBox/TagsRow/CardSolar/Margin/HBox"]
+layout_mode = 2
+text = "Solar Unit (kW)"
+
+[node name="TagSolar" parent="Margin/VBox/TagsRow/CardSolar/Margin/HBox" instance=ExtResource("4_sourcetag")]
+layout_mode = 2
+
+[node name="CardRad" type="PanelContainer" parent="Margin/VBox/TagsRow"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/TagsRow/CardRad"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox/TagsRow/CardRad/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Margin/VBox/TagsRow/CardRad/Margin/HBox"]
+layout_mode = 2
+text = "Radiation Limit"
+
+[node name="TagRad" parent="Margin/VBox/TagsRow/CardRad/Margin/HBox" instance=ExtResource("4_sourcetag")]
+layout_mode = 2
+
+[node name="SectionActions" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 20
+text = "3. Modals and Screens (Touch buttons ≥ 64px)"
+
+[node name="ActionsRow" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BtnPopup" type="Button" parent="Margin/VBox/ActionsRow"]
+custom_minimum_size = Vector2(220, 64)
+layout_mode = 2
+focus_mode = 0
+text = "Test Event Popup"
+
+[node name="BtnSources" type="Button" parent="Margin/VBox/ActionsRow"]
+custom_minimum_size = Vector2(220, 64)
+layout_mode = 2
+focus_mode = 0
+text = "Open Sources Screen"
+
+[node name="EventPopup" parent="." instance=ExtResource("5_popup")]
+
+[node name="SourcesScreen" parent="." instance=ExtResource("6_sources")]
+visible = false
+layout_mode = 1
+

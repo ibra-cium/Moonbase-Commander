@@ -1,0 +1,25 @@
+{
+  "id": "M2_repaired",
+  "title": "Mission 2 — Broken recycler repaired",
+  "mission": "M2",
+  "cargo": {
+    "solar": 20,
+    "battery": 4,
+    "reactor": 2,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 2,
+    "food": 5,
+    "shield": 10
+  },
+  "seed": 1,
+  "rule": "REST",
+  "force": {},
+  "expect": {
+    "outcome": "SURVIVED",
+    "end_day": 10,
+    "stars": 2,
+    "root": "ROOT_SUCCESS"
+  }
+}
+

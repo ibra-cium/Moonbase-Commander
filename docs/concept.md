@@ -74,8 +74,8 @@ Then it shows one short, real science fact, with its source.
 
 ## Hackathon scope
 
-**Must have:** pack screen, 30-day loop, four linked systems, four crew, at least three events, debrief, stars and retry, NASA sources for every number, plays in a phone browser.
+**Must have:** pack screen, 30-day loop, four linked systems, four crew, at least three events, debrief, stars and retry, NASA sources for every number, plays in a phone browser, 3D base view (low-poly), every packed item visible on the base.
 
 **Nice to have:** Bangla/English toggle, sound design, real solar storm events from NASA records, base layout that affects how fast the crew reaches the shelter, Mars as a second level.
 
-**Not in this version:** multiplayer, 3D, user accounts, upgrade timers, in-app purchases.
+**Not in this version:** multiplayer, user accounts, upgrade timers, in-app purchases.

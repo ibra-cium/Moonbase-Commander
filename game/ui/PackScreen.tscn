@@ -1,0 +1,267 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/pack_screen.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://ui/SourceTag.tscn" id="3_sourcetag"]
+[ext_resource type="PackedScene" path="res://ui/PackItemCard.tscn" id="4_itemcard"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.0784314, 0.0941176, 0.129412, 0.88)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12549, 0.145098, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Environment" id="Environment_preview"]
+background_mode = 1
+background_color = Color(0.0196078, 0.0235294, 0.0392157, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.15, 0.18, 0.24, 1)
+ambient_light_energy = 0.6
+tonemap_mode = 3
+
+[node name="PackScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopBar" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleVBox" type="VBoxContainer" parent="Margin/VBox/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="Label" parent="Margin/VBox/TopBar/TitleVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pack Mission Cargo"
+
+[node name="SubtitleLabel" type="Label" parent="Margin/VBox/TopBar/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 14
+text = "Equip the lander within the cargo limit before launch."
+
+[node name="CargoBarHBox" type="HBoxContainer" parent="Margin/VBox/TopBar"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="BarVBox" type="VBoxContainer" parent="Margin/VBox/TopBar/CargoBarHBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="CargoBarLabel" type="Label" parent="Margin/VBox/TopBar/CargoBarHBox/BarVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Cargo Capacity: 0 / 12,000 kg"
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBox/TopBar/CargoBarHBox/BarVBox"]
+custom_minimum_size = Vector2(300, 20)
+layout_mode = 2
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="SourceTagLimit" parent="Margin/VBox/TopBar/CargoBarHBox" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+size_flags_vertical = 4
+constant_id = "CARGO_LIMIT_KG"
+
+[node name="BodyHBox" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="CatalogScroll" type="ScrollContainer" parent="Margin/VBox/BodyHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.15
+horizontal_scroll_mode = 0
+
+[node name="CatalogVBox" type="VBoxContainer" parent="Margin/VBox/BodyHBox/CatalogScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="CardSolar" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="CardBattery" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="CardReactor" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="CardGreenhouse" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="CardO2" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="CardWater" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="CardFood" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="CardShield" parent="Margin/VBox/BodyHBox/CatalogScroll/CatalogVBox" instance=ExtResource("4_itemcard")]
+layout_mode = 2
+
+[node name="RightVBox" type="VBoxContainer" parent="Margin/VBox/BodyHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+theme_override_constants/separation = 12
+
+[node name="PreviewPanel" type="PanelContainer" parent="Margin/VBox/BodyHBox/RightVBox"]
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Margin/VBox/BodyHBox/RightVBox/PreviewPanel"]
+layout_mode = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Margin/VBox/BodyHBox/RightVBox/PreviewPanel/SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(580, 260)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Margin/VBox/BodyHBox/RightVBox/PreviewPanel/SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_preview")
+
+[node name="SunLight" type="DirectionalLight3D" parent="Margin/VBox/BodyHBox/RightVBox/PreviewPanel/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.819152, 0.286788, -0.496732, 0, 0.866025, 0.5, 0.573576, -0.409576, 0.709406, 0, 0, 0)
+light_color = Color(1, 0.960784, 0.882353, 1)
+light_energy = 1.6
+
+[node name="Camera3D" type="Camera3D" parent="Margin/VBox/BodyHBox/RightVBox/PreviewPanel/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.8, 4.8)
+fov = 38.0
+
+[node name="LanderPivot" type="Node3D" parent="Margin/VBox/BodyHBox/RightVBox/PreviewPanel/SubViewportContainer/SubViewport"]
+
+[node name="WarningsPanel" type="PanelContainer" parent="Margin/VBox/BodyHBox/RightVBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="WarningsTitle" type="Label" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Mission Readiness"
+
+[node name="WarnFoodRow" type="HBoxContainer" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnFoodRow"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnFoodRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "Food for 0 days"
+
+[node name="SourceTagFood" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnFoodRow" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+size_flags_vertical = 4
+constant_id = "FOOD_PACKED_KG_PERSON_DAY"
+
+[node name="WarnWaterRow" type="HBoxContainer" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnWaterRow"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnWaterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "Water for 0 days"
+
+[node name="SourceTagWater" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnWaterRow" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+size_flags_vertical = 4
+constant_id = "WATER_RECOVERY_FULL"
+
+[node name="WarnNightRow" type="HBoxContainer" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnNightRow"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnNightRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "Night energy 0 / 3178 kWh"
+
+[node name="SourceTagNight" parent="Margin/VBox/BodyHBox/RightVBox/WarningsPanel/Margin/VBox/WarnNightRow" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+size_flags_vertical = 4
+constant_id = "NIGHT_HOURS"
+
+[node name="LaunchButton" type="Button" parent="Margin/VBox/BodyHBox/RightVBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Launch Mission"

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://world/lander.gd" id="1_lander"]
+[ext_resource type="PackedScene" path="res://assets/models/kaykit/lander_B.gltf" id="2_model"]
+[ext_resource type="Texture2D" path="res://assets/particles/kenney/flame_01.png" id="3_flame"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_scorch"]
+size = Vector2(2.4, 2.4)
+
+[node name="Lander" type="Node3D"]
+script = ExtResource("1_lander")
+
+[node name="ScorchMark" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.02, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_scorch")
+
+[node name="DustParticles" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+cast_shadow = 0
+emitting = false
+amount = 28
+lifetime = 1.0
+one_shot = true
+explosiveness = 0.85
+direction = Vector3(0, 0.2, 0)
+spread = 85.0
+gravity = Vector3(0, -0.8, 0)
+initial_velocity_min = 3.5
+initial_velocity_max = 6.0
+scale_amount_min = 0.8
+scale_amount_max = 2.2
+color = Color(0.55, 0.55, 0.57, 0.65)
+
+[node name="LanderBody" type="Node3D" parent="."]
+
+[node name="Model" parent="LanderBody" instance=ExtResource("2_model")]
+
+[node name="FlameSprite" type="Sprite3D" parent="LanderBody"]
+transform = Transform3D(1.2, 0, 0, 0, -1.8, 1.57361e-07, 0, -2.7171e-07, -1.04, 0, -0.2, 0)
+visible = false
+modulate = Color(1, 0.65, 0.2, 0.95)
+billboard = 1
+texture = ExtResource("3_flame")
+
+[node name="CratesContainer" type="Node3D" parent="."]

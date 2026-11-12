@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://world/astronaut.gd" id="1_astro"]
+[ext_resource type="FontVariation" path="res://ui/font_bold.tres" id="2_font_bold"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_body"]
+radius = 0.2
+height = 0.65
+
+[sub_resource type="SphereMesh" id="SphereMesh_helmet"]
+radius = 0.16
+height = 0.32
+
+[sub_resource type="BoxMesh" id="BoxMesh_visor"]
+size = Vector3(0.18, 0.11, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_backpack"]
+size = Vector3(0.24, 0.36, 0.14)
+
+[node name="Astronaut" type="Node3D"]
+script = ExtResource("1_astro")
+
+[node name="BodyPivot" type="Node3D" parent="."]
+
+[node name="Capsule" type="MeshInstance3D" parent="BodyPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("CapsuleMesh_body")
+
+[node name="Helmet" type="MeshInstance3D" parent="BodyPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
+mesh = SubResource("SphereMesh_helmet")
+
+[node name="Visor" type="MeshInstance3D" parent="BodyPivot/Helmet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -0.13)
+mesh = SubResource("BoxMesh_visor")
+
+[node name="Backpack" type="MeshInstance3D" parent="BodyPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0.17)
+mesh = SubResource("BoxMesh_backpack")
+
+[node name="SickIcon" type="Label3D" parent="BodyPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18, 0)
+visible = false
+billboard = 1
+modulate = Color(0.878431, 0.282353, 0.282353, 1)
+outline_modulate = Color(0, 0, 0, 1)
+text = "+"
+font = ExtResource("2_font_bold")
+font_size = 40
+outline_size = 6
+
+[node name="NameTag" type="Label3D" parent="BodyPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48, 0)
+billboard = 1
+no_depth_test = true
+render_priority = 2
+outline_render_priority = 1
+modulate = Color(0.952941, 0.956863, 0.964706, 1)
+outline_modulate = Color(0.0784314, 0.0941176, 0.129412, 1)
+text = "Rafi"
+font = ExtResource("2_font_bold")
+font_size = 44
+outline_size = 10
+pixel_size = 0.014

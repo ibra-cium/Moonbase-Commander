@@ -1,0 +1,198 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://ui/mission_briefing.gd" id="1_mb"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://ui/SourceTag.tscn" id="3_srctag"]
+[ext_resource type="Texture2D" path="res://assets/icons/rocket_launch.svg" id="4_rocket"]
+
+[node name="MissionBriefing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_mb")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.054902, 0.0862745, 0.97)
+
+[node name="SafeMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="CenterContainer" type="CenterContainer" parent="SafeMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPanel" type="PanelContainer" parent="SafeMargin/CenterContainer"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CardMargin" type="MarginContainer" parent="SafeMargin/CenterContainer/CardPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="RootVBox" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RocketIcon" type="TextureRect" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/Header"]
+modulate = Color(0.94902, 0.756863, 0.305882, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_rocket")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeaderLabels" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="ControlLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/Header/HeaderLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 20
+text = "Mission Control"
+
+[node name="MissionLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/Header/HeaderLabels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 14
+text = "Mission 1"
+
+[node name="SkipButton" type="Button" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/Header"]
+visible = false
+custom_minimum_size = Vector2(88, 48)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+text = "Skip"
+
+[node name="HSeparator" type="HSeparator" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox"]
+layout_mode = 2
+
+[node name="StepScroll" type="ScrollContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentVBox" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="CardSection" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BadgeRow" type="HBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/CardSection"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FactBadge" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/CardSection/BadgeRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.454902, 0.72549, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Real NASA fact"
+
+[node name="CardSourceTag" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/CardSection/BadgeRow" instance=ExtResource("3_srctag")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CardTitleLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/CardSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 24
+text = "Welcome, Cadet!"
+autowrap_mode = 3
+
+[node name="CardBodyLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/CardSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 0.87, 0.92, 1)
+theme_override_font_sizes/font_size = 18
+text = "Briefing body text."
+autowrap_mode = 3
+
+[node name="GuessSection" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="GuessTitleLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/GuessSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 24
+text = "Guess first!"
+autowrap_mode = 3
+
+[node name="QuestionLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/GuessSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 20
+text = "Question?"
+autowrap_mode = 3
+
+[node name="OptionsVBox" type="VBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/GuessSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HintLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/StepScroll/ContentVBox/GuessSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 15
+text = "It's OK not to know"
+autowrap_mode = 3
+
+[node name="FooterRow" type="HBoxContainer" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="ProgressLabel" type="Label" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/FooterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 14
+text = "1 / 3"
+
+[node name="NextButton" type="Button" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/FooterRow"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+focus_mode = 0
+text = "Next"
+
+[node name="GoButton" type="Button" parent="SafeMargin/CenterContainer/CardPanel/CardMargin/RootVBox/FooterRow"]
+visible = false
+custom_minimum_size = Vector2(180, 64)
+layout_mode = 2
+focus_mode = 0
+text = "Let's go!"
+

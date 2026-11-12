@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/NotoSans-Bold.ttf" id="1_fgsui"]
+[ext_resource type="FontFile" path="res://assets/fonts/NotoSansBengali-Bold.ttf" id="2_o62hc"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_o62hc")])
+base_font = ExtResource("1_fgsui")

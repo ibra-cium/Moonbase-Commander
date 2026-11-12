@@ -1,0 +1,25 @@
+{
+  "id": "M3_regolith",
+  "title": "Mission 3 — Solar storm survived by building regolith shield",
+  "mission": "M3",
+  "cargo": {
+    "solar": 20,
+    "battery": 4,
+    "reactor": 2,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 4,
+    "food": 5,
+    "shield": 0
+  },
+  "seed": 1,
+  "rule": "SMART",
+  "force": {},
+  "expect": {
+    "outcome": "SURVIVED",
+    "end_day": 12,
+    "stars": 3,
+    "root": "ROOT_SUCCESS"
+  }
+}
+

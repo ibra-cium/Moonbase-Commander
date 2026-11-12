@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://ui/collect_bubble.gd" id="1_collect"]
+[ext_resource type="Texture2D" path="res://assets/icons/bolt.svg" id="2_icon"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="3_theme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hint"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0784314, 0.0941176, 0.129412, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.94902, 0.756863, 0.305882, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CollectBubble" type="Control"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 72.0
+offset_bottom = 72.0
+mouse_filter = 2
+theme = ExtResource("3_theme")
+script = ExtResource("1_collect")
+
+[node name="BubbleButton" type="Button" parent="."]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+pivot_offset = Vector2(36, 36)
+focus_mode = 0
+mouse_filter = 0
+
+[node name="CenterBox" type="VBoxContainer" parent="BubbleButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="IconRect" type="TextureRect" parent="BubbleButton/CenterBox"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+texture = ExtResource("2_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="BubbleButton/CenterBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_colors/font_outline_color = Color(0.05, 0.06, 0.09, 0.95)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 14
+text = "+0"
+horizontal_alignment = 1
+
+[node name="HintPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 108.0
+offset_bottom = -8.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hint")
+
+[node name="HintMargin" type="MarginContainer" parent="HintPanel"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HintLabel" type="Label" parent="HintPanel/HintMargin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 13
+text = "Tap the bubbles!"
+horizontal_alignment = 1
+

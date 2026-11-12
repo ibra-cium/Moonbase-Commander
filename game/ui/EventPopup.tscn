@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cx4xqy7k5r16a"]
+
+[ext_resource type="Script" path="res://ui/event_popup.gd" id="1_ep01"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://bd2examsvky0x" path="res://assets/icons/warning.svg" id="3_warn"]
+[ext_resource type="PackedScene" path="res://ui/SourceTag.tscn" id="4_srctag"]
+
+[node name="EventPopup" type="CanvasLayer"]
+layer = 25
+visible = false
+script = ExtResource("1_ep01")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.025, 0.04, 0.75)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+theme = ExtResource("2_theme")
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ToneRibbon" type="ColorRect" parent="Center/Panel/Margin/VBox"]
+visible = false
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+color = Color(0.878431, 0.282353, 0.282353, 1)
+
+[node name="Header" type="HBoxContainer" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="IconRect" type="TextureRect" parent="Center/Panel/Margin/VBox/Header"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_warn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="Center/Panel/Margin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 24
+text = "Event Title"
+autowrap_mode = 3
+
+[node name="SourceTag" parent="Center/Panel/Margin/VBox/Header" instance=ExtResource("4_srctag")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MessageLabel" type="Label" parent="Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 20
+text = "Event message description goes here. Up to two lines of text."
+autowrap_mode = 3
+max_lines_visible = 2
+
+[node name="AlertBar" type="ProgressBar" parent="Center/Panel/Margin/VBox"]
+visible = false
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+max_value = 100.0
+value = 50.0
+show_percentage = false
+
+[node name="ButtonBox" type="HBoxContainer" parent="Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1

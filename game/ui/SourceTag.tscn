@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://df7sux3w8v5ma"]
+
+[ext_resource type="Script" path="res://ui/source_tag.gd" id="1_st01"]
+[ext_resource type="Texture2D" uid="uid://d3ryjunqyh8k5" path="res://assets/icons/info.svg" id="2_info"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="3_theme"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_info"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+
+[node name="SourceTag" type="Control"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("3_theme")
+script = ExtResource("1_st01")
+
+[node name="InfoButton" type="Button" parent="."]
+modulate = Color(0.4, 0.72, 1.0, 0.95)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_info")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_info")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_info")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_info")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_info")
+icon = ExtResource("2_info")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PopoverLayer" type="CanvasLayer" parent="."]
+layer = 20
+visible = false
+
+[node name="Backdrop" type="ColorRect" parent="PopoverLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="CenterContainer" type="CenterContainer" parent="PopoverLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PopoverPanel" type="PanelContainer" parent="PopoverLayer/CenterContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("3_theme")
+
+[node name="Margin" type="MarginContainer" parent="PopoverLayer/CenterContainer/PopoverPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+text = "Constant Label"
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox/Header"]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+focus_mode = 0
+text = "×"
+
+[node name="HSeparator" type="HSeparator" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="ValueLabel" type="Label" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+text = "Value: 100 kg"
+
+[node name="TypeLabel" type="Label" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 18
+text = "Type: NASA value"
+
+[node name="SourceLabel" type="Label" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 18
+text = "Source: NASA SP-2009-566"
+autowrap_mode = 3
+
+[node name="LinkLabel" type="Label" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65098, 0.819608, 0.968627, 1)
+theme_override_font_sizes/font_size = 15
+text = "https://nasa.gov"
+autowrap_mode = 3
+
+[node name="GameChoiceLabel" type="Label" parent="PopoverLayer/CenterContainer/PopoverPanel/Margin/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 16
+text = "Our choice to make the game playable."
+autowrap_mode = 3

@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://ui/ending_overlay.gd" id="1_end"]
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="2_theme"]
+
+[node name="EndingOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_end")
+
+[node name="TopBanner" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(480, 64)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 24.0
+offset_right = 240.0
+offset_bottom = 88.0
+grow_horizontal = 2
+
+[node name="Margin" type="MarginContainer" parent="TopBanner"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="TitleLabel" type="Label" parent="TopBanner/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 22
+text = "Mission Ending"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopRightMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 88.0
+grow_horizontal = 0
+
+[node name="SkipButton" type="Button" parent="TopRightMargin"]
+custom_minimum_size = Vector2(140, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Skip >>"
+

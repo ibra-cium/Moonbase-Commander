@@ -1,0 +1,299 @@
+keys,en,bn
+GAME_TITLE,Moonbase Commander,মুনবেস কমান্ডার
+TITLE_START,Start,শুরু
+TITLE_SUBTITLE,Junior Astronaut Mission Trainer,জুনিয়র অ্যাস্ট্রোনট মিশন ট্রেইনার
+TITLE_SOURCES,Data Sources,তথ্যসূত্র
+TITLE_CREDIT_MOON,Moon: NASA SVS CGI Moon Kit (LRO data) · Earth: NASA Earth Observatory,চাঁদ: NASA SVS CGI Moon Kit (LRO ডেটা) · পৃথিবী: NASA Earth Observatory
+SRC_SCREEN_TITLE,Data Sources & Assumptions,তথ্যসূত্র ও অনুমান
+SRC_SIMPLIFICATIONS_NOTE,"Simplifications: Base habitat, life support recycler, and drill are pre-installed at landing and cost no launch mass. Radiation doses (5, 10, 15 g/cm²) derive from a NASA pressurized rover storm study; 0 g/cm² from a habitat study. Game settings balance playability while preserving authentic physics and life-support constraints.","সরলীকরণ: ঘাঁটির বাসস্থান, লাইফ-সাপোর্ট রিসাইক্লার ও ড্রিল অবতরণের সময়ই বসানো থাকে, এতে পেলোড ভর লাগে না। রেডিয়েশন ডোজ (5, 10, 15 g/cm²) NASA-এর রোভার স্টর্ম গবেষণা থেকে এবং 0 g/cm² হ্যাবিট্যাট গবেষণা থেকে নেওয়া। বাস্তব পদার্থবিজ্ঞান ও লাইফ-সাপোর্ট সীমা বজায় রেখে খেলার উপযোগী ভারসাম্য রাখা হয়েছে।"
+SRC_VALUE,Value,মান
+SRC_TYPE,Type,ধরন
+SRC_SOURCE,Source,উৎস
+SRC_LINK,Link,লিঙ্ক
+SRC_GAME_CHOICE,Our choice to make the game playable.,খেলাটি উপভোগ্য করতে আমাদের নির্ধারিত মান।
+SRC_FILTER_ALL,All Systems,সব সিস্টেম
+SRC_NO_RESULTS,No constants found matching your search.,খোঁজার সাথে মেলে এমন কোনো ধ্রুবক পাওয়া যায়নি।
+SRC_BACK,< Back,< পেছনে
+POPUP_OK,OK,ঠিক আছে
+POPUP_CANCEL,Cancel,বাতিল
+POPUP_CLOSE,Close,বন্ধ করুন
+PACK_TITLE,Pack Mission Cargo,মিশন কার্গো গোছান
+PACK_SUBTITLE,Equip the lander within the cargo limit before launch.,উৎক্ষেপণের আগে ওজন সীমার মধ্যে ল্যান্ডারের সরঞ্জাম সাজান।
+PACK_CARGO_BAR_LABEL,Cargo Capacity,কার্গো ধারণক্ষমতা
+PACK_ITEM_SOLAR,Solar panel,সোলার প্যানেল
+PACK_ITEM_BATTERY,Battery,ব্যাটারি
+PACK_ITEM_REACTOR,Small reactor,ছোট রিঅ্যাক্টর
+PACK_ITEM_GREENHOUSE,Greenhouse,গ্রিনহাউস
+PACK_ITEM_O2,Oxygen tanks,অক্সিজেন ট্যাংক
+PACK_ITEM_WATER,Water container,পানির ট্যাংক
+PACK_ITEM_FOOD,Food crate,খাবারের বক্স
+PACK_ITEM_SHIELD,Shield water,সুরক্ষা পানি
+PACK_UNIT_KG,{n} kg/unit,{n} kg/টি
+PACK_UNIT_M2,{n} kg/m²,{n} kg/m²
+PACK_SIZE_M2,{n} m²,{n} m²
+PACK_WARNINGS_TITLE,Mission Readiness,মিশন প্রস্তুতি
+WARN_FOOD,Food for {n} days,{n} দিনের খাবার
+WARN_WATER,Water for about {n} days with the recycler,রিসাইক্লারসহ প্রায় {n} দিনের পানি
+WARN_NIGHT_ENERGY,Night energy {have} / {need} kWh,রাতের শক্তি {have} / {need} kWh
+PACK_LAUNCH,Launch Mission,মিশন উৎক্ষেপণ
+PACK_ERR_OVERWEIGHT,Overweight ({mass} / {limit} kg),অতিরিক্ত ওজন ({mass} / {limit} kg)
+PACK_ERR_GREENHOUSE,Invalid Greenhouse Size,ভুল গ্রিনহাউস মাপ
+PACK_ERR_INVALID,Cargo Invalid,কার্গো সঠিক নয়
+PACK_PREVIEW_LANDER,Lander Cargo Bay,ল্যান্ডার কার্গো বে
+HUD_DAY,Day {day} / {total},দিন {day} / {total}
+HUD_FAST,Fast (0.5s),দ্রুত (0.5s)
+HUD_END_DAY,End Day,দিন শেষ
+HUD_RESOLVING,Resolving...,হিসাব চলছে...
+HUD_POWER,Power,বিদ্যুৎ
+HUD_OXYGEN,Oxygen,অক্সিজেন
+HUD_CO2,CO2,CO2
+HUD_WATER,Water,পানি
+HUD_FOOD,Food,খাবার
+HUD_RADIATION,Radiation,রেডিয়েশন
+HUD_SHELTER,Shelter,আশ্রয়
+HUD_OGA_ON,OGA ON,OGA চালু
+HUD_OGA_OFF,OGA OFF,OGA বন্ধ
+HUD_RECYCLER_OK,Recycler OK,রিসাইক্লার ঠিক
+HUD_RECYCLER_BROKEN,Recycler BROKEN,রিসাইক্লার বিকল
+HUD_GREENHOUSE_LIGHTS,Greenhouse,গ্রিনহাউস
+HUD_SCIENCE_GEAR,Science Gear,বিজ্ঞান যন্ত্র
+HUD_MENU,Menu,মেনু
+HUD_SUN,Sun,দিন
+HUD_NIGHT,Night,রাত
+CREW_TITLE,Crew,ক্রু
+CREW_MEMBER,Crew {n},ক্রু {n}
+JOB_REST,Rest,বিশ্রাম
+JOB_REPAIR,Repair,মেরামত
+JOB_CLEAN,Clean,পরিষ্কার
+JOB_FARM,Farm,চাষ
+JOB_REGOLITH,Regolith,রেগোলিথ
+JOB_SCIENCE,Science,বিজ্ঞান
+CREW_SICK,Sick,অসুস্থ
+CREW_DOSE,{dose} mSv,{dose} mSv
+JOB_GREY_SICK,Crew is sick,ক্রু অসুস্থ
+JOB_GREY_NOTHING_BROKEN,Nothing broken to repair,মেরামত করার মতো কিছু ভাঙেনি
+JOB_GREY_NO_GREENHOUSE,No working greenhouse,সচল গ্রিনহাউস নেই
+JOB_GREY_STORM,Mandatory shelter,আশ্রয়ে থাকা বাধ্যতামূলক
+HUD_TOAST_BATTERY_HOURS,Battery lasted {h} h. Air system off.,ব্যাটারি {h} ঘণ্টা চলেছে। বায়ু ব্যবস্থা বন্ধ।
+HUD_TOAST_NOMINAL,Day {day} complete. All systems nominal.,দিন {day} সম্পন্ন। সব ব্যবস্থা স্বাভাবিক।
+HUD_TOAST_BLACKOUT,Blackout! Battery drained.,ব্ল্যাকআউট! ব্যাটারি শেষ।
+HUD_TOAST_CO2_HIGH,Warning: High CO2 detected.,সতর্কতা: অতিরিক্ত CO2 ধরা পড়েছে।
+HUD_TOAST_RECYCLER_BROKE,Water recycler failed!,পানির রিসাইক্লার বিকল হয়েছে!
+HUD_TOAST_METEOROID,Meteoroid damaged solar panel!,উল্কা সোলার প্যানেল ক্ষতিগ্রস্ত করেছে!
+MENU_PAUSE_TITLE,Mission Paused,মিশন বিরতি
+MENU_RESUME,Resume,চালু করুন
+MENU_SOURCES,Data Sources,তথ্যসূত্র
+MENU_ABORT,Abort Mission,মিশন বাতিল
+EVT_STORM_TITLE,Solar Storm Warning,সৌর ঝড়ের সতর্কতা
+EVT_STORM_WARN,Solar storm in about {min} minutes. Everyone to the shelter!,প্রায় {min} মিনিটের মধ্যে সৌর ঝড়! সবাই আশ্রয়ে যান!
+EVT_CHOICE_SHELTER,Everyone to the shelter,সবাই আশ্রয়ে যান
+EVT_SUNSET_TITLE,Lunar Sunset,চাঁদে সূর্যাস্ত
+EVT_SUNSET_MSG,Day 15: The sun is setting. Solar panels stop producing power for the 14-day lunar night.,দিন 15: সূর্য ডুবছে। 14 দিনের চাঁদের রাতে সোলার প্যানেল বিদ্যুৎ বানাবে না।
+DEBRIEF_TITLE,Mission Debrief,মিশন পর্যালোচনা
+DEBRIEF_SURVIVED,Mission Success!,মিশন সফল!
+DEBRIEF_EVAC,Mission Aborted,মিশন বাতিল
+DEBRIEF_STARS,Stars: {stars} / 3,তারকা: {stars} / 3
+DEBRIEF_DAY_REACHED,Completed {days} of {total} days,{total} দিনের মধ্যে {days} দিন সম্পন্ন
+DEBRIEF_SEED,Seed: {seed},সিড: {seed}
+DEBRIEF_RETRY,Retry Mission,আবার চেষ্টা করুন
+DEBRIEF_CHANGE_CARGO,Change Cargo,কার্গো বদলান
+DEBRIEF_TITLE_BTN,Title Screen,শুরুর পর্দা
+DEBRIEF_FACT_TITLE,Moon Fact,চাঁদের তথ্য
+DEBRIEF_TIMELINE_TITLE,Mission Timeline,মিশন সময়রেখা
+DEBRIEF_ROOT_CAUSE_TITLE,Analysis,বিশ্লেষণ
+DEBRIEF_STORM_CHANCE,Real chance of a strong storm in 30 days: about {p} %,30 দিনে বড় সৌর ঝড়ের বাস্তব সম্ভাবনা: প্রায় {p} %
+ROOT_NIGHT_ENERGY,Your night energy: {have} kWh. The base needed {need} kWh to get through the night.,আপনার রাতের শক্তি: {have} kWh। রাত পার করতে ঘাঁটির {need} kWh প্রয়োজন ছিল।
+ROOT_SHIELD,Your shelter had {g} g/cm². About {g_needed} g/cm² keeps the storm dose under {limit} mSv.,আপনার আশ্রয়ে {g} g/cm² ছিল। ঝড়ের ডোজ {limit} mSv-এর নিচে রাখতে প্রায় {g_needed} g/cm² লাগে।
+ROOT_REPAIR,The water recycler broke on Day {d} and was never repaired.,দিন {d}-এ পানির রিসাইক্লার ভেঙে গিয়েছিল এবং আর মেরামত করা হয়নি।
+ROOT_SUPPLY,You packed {packed} kg of {item}. The crew used {used} kg.,আপনি {item} নিয়েছিলেন {packed} kg। ক্রু ব্যবহার করেছে {used} kg।
+ROOT_SUCCESS_3,Mission accomplished with 3 stars! The base ran smoothly and all science goals were met.,3 তারকাসহ মিশন সফল! ঘাঁটি সুন্দরভাবে চলেছে এবং সব বিজ্ঞান লক্ষ্য পূরণ হয়েছে।
+ROOT_SUCCESS_2_SICK,Mission survived with 2 stars. Missing star: The crew got sick from high CO2.,2 তারকাসহ টিকে গেছেন। বাদ পড়া তারকা: অতিরিক্ত CO2-এ ক্রু অসুস্থ হয়েছিল।
+ROOT_SUCCESS_2_SCI,Mission survived with 2 stars. Missing star: Science points ({science}/{goal}) were below the goal of {goal}.,2 তারকাসহ টিকে গেছেন। বাদ পড়া তারকা: বিজ্ঞান পয়েন্ট ({science}/{goal}) লক্ষ্য {goal}-এর কম ছিল।
+ROOT_SUCCESS_1,"Mission survived with 1 star. Missing stars: crew got sick, and science points ({science}/{goal}) below goal.",
+CHAIN_SUNSET,Day {day}: Sunset — 14-day lunar night begins,দিন {day}: সূর্যাস্ত — 14 দিনের চাঁদের রাত শুরু
+CHAIN_STORM_WARN,Day {day}: Solar storm alert ({min} min warning),দিন {day}: সৌর ঝড়ের সতর্কতা ({min} মিনিট আগে)
+CHAIN_BLACKOUT,"Day {day}: Battery empty, life-support air system off","দিন {day}: ব্যাটারি খালি, লাইফ-সাপোর্ট বায়ু ব্যবস্থা বন্ধ"
+CHAIN_POWER_SHED,Day {day}: Power shed on non-essential systems,দিন {day}: অপ্রয়োজনীয় যন্ত্রে বিদ্যুৎ বিচ্ছিন্ন
+CHAIN_CO2_HIGH,Day {day}: CO2 reached unhealthy levels ({co2} mmHg),দিন {day}: CO2 অস্বাস্থ্যকর মাত্রায় পৌঁছেছে ({co2} mmHg)
+CHAIN_CREW_SICK,Day {day}: Crew became incapacitated by sickness,দিন {day}: অসুস্থতায় ক্রু অক্ষম হয়েছে
+CHAIN_RECYCLER_BROKE,Day {day}: Water recycler broke down,দিন {day}: পানির রিসাইক্লার বিকল হয়েছে
+CHAIN_METEOROID,Day {day}: Micrometeoroid damaged solar panels,দিন {day}: ক্ষুদ্র উল্কা সোলার প্যানেল ক্ষতিগ্রস্ত করেছে
+CHAIN_DUST_HIGH,Day {day}: Lunar dust obscured solar panels,দিন {day}: চাঁদের ধুলা সোলার প্যানেল ঢেকে ফেলেছে
+CHAIN_FOOD_SPOILED,Day {day}: Food spoiled due to power loss,দিন {day}: বিদ্যুৎ না থাকায় খাবার নষ্ট হয়েছে
+CHAIN_PLANTS_DIED,Day {day}: Greenhouse crops wilted and died,দিন {day}: গ্রিনহাউসের ফসল শুকিয়ে মারা গেছে
+CHAIN_SUPPLY_LOW,Day {day}: Critical supply running low ({item}),দিন {day}: জরুরি রসদ কমে এসেছে ({item})
+CHAIN_EVAC_CO2,Day {day}: Crew evacuated due to toxic CO2 levels,দিন {day}: বিষাক্ত CO2 মাত্রার কারণে ক্রু সরিয়ে নেওয়া হয়েছে
+CHAIN_EVAC_O2,Day {day}: Crew evacuated due to oxygen depletion,দিন {day}: অক্সিজেন শেষ হওয়ায় ক্রু সরিয়ে নেওয়া হয়েছে
+CHAIN_EVAC_WATER,Day {day}: Crew evacuated due to water depletion,দিন {day}: পানি শেষ হওয়ায় ক্রু সরিয়ে নেওয়া হয়েছে
+CHAIN_EVAC_FOOD,Day {day}: Crew evacuated due to food depletion,দিন {day}: খাবার শেষ হওয়ায় ক্রু সরিয়ে নেওয়া হয়েছে
+CHAIN_EVAC_RADIATION,Day {day}: Crew evacuated due to dangerous storm dose,দিন {day}: বিপজ্জনক ঝড়ের রেডিয়েশনে ক্রু সরিয়ে নেওয়া হয়েছে
+BTN_SKIP,Skip >>,স্কিপ >>
+ENDING_EVAC_TITLE,Mission Evacuation,মিশন উচ্ছেদ
+ENDING_SUCCESS_TITLE,Mission Survived — Day 30 Dawn!,৩০তম দিন — চাঁদে ভোর!
+HUD_SOUND_ON,Sound: ON,শব্দ: চালু
+HUD_SOUND_OFF,Sound: OFF,শব্দ: বন্ধ
+TUT_STEP_BADGE,Step {step} / {total},ধাপ {step} / {total}
+TUT_STEP1_TITLE,Pack Within the Limit,সীমার মধ্যে প্যাক করুন
+TUT_STEP1_BODY,Keep cargo under {limit} kg and check Mission Readiness warnings before launch.,কার্গো {limit} kg-এর নিচে রাখুন এবং উৎক্ষেপণের আগে মিশন প্রস্তুতির সতর্কতা দেখুন।
+TUT_STEP2_TITLE,Give Each Astronaut a Job,প্রতিটি নভোচারীকে কাজ দিন
+TUT_STEP2_BODY,"Tap an astronaut, then tap a building to give a job. Then press End Day.",একজন নভোচারী ও পরে একটি স্থাপনায় ট্যাপ করে কাজ দিন। তারপর দিন শেষ চাপুন।
+TUT_STEP3_TITLE,Survive the Lunar Night,চাঁদের রাতে টিকে থাকুন
+TUT_STEP3_BODY,Sunset starts on Day {day} for {night} dark days. Batteries or a reactor keep air on!,দিন {day}-এ সূর্যাস্তের পর {night} দিন রাত থাকবে। ব্যাটারি বা রিঅ্যাক্টর বাতাস চালু রাখবে!
+TUT_SKIP,Skip Tutorial,টিউটোরিয়াল এড়ান
+TUT_NEXT,Next,পরবর্তী
+TUT_GOT_IT,Got it!,বুঝেছি!
+TUT_PLAY,Let's Play!,শুরু করি!
+HINT_BADGE,Tip,টিপস
+HINT_BATTERY_TITLE,Battery Low at Night,রাতে ব্যাটারি কম
+HINT_BATTERY_BODY,Battery is under {pct}% at night! Turn off Greenhouse or Science to save power.,রাতে ব্যাটারি {pct}%-এর নিচে! বিদ্যুৎ বাঁচাতে গ্রিনহাউস বা বিজ্ঞান বন্ধ রাখুন।
+HINT_BROKEN_TITLE,Something Broke!,কিছু ভেঙে গেছে!
+HINT_BROKEN_BODY,Equipment broke on the base! Give an astronaut the Repair job to fix it.,ঘাঁটির একটি যন্ত্র নষ্ট হয়েছে! ঠিক করতে একজন নভোচারীকে মেরামতের কাজ দিন।
+HINT_CO2_TITLE,CO2 Is Rising,CO2 বাড়ছে
+HINT_CO2_BODY,CO2 turned yellow (over {mmhg} mmHg)! Keep power on so air scrubbers can clean it.,CO2 হলুদ ({mmhg} mmHg-এর বেশি)! এয়ার স্ক্রাবার চালাতে বিদ্যুৎ চালু রাখুন।
+MAP_TITLE,Moon Missions,চাঁদের মিশন
+MAP_PLAY,Play,খেলুন
+MAP_LOCKED,Win the mission before to unlock,খোলার জন্য আগের মিশন জিতুন
+MAP_FREE_PLAY,Free play,ফ্রি প্লে
+MISSION_M1_NAME,First Landing,প্রথম অবতরণ
+MISSION_M1_GOAL,"Pack air, water and food. Stay {days} days.","বাতাস, পানি ও খাবার গুছিয়ে {days} দিন টিকে থাকুন।"
+MISSION_M2_NAME,Something Broke,যন্ত্র বিকল
+MISSION_M2_GOAL,A machine will break. Fix it fast!,একটি যন্ত্র নষ্ট হবে। দ্রুত মেরামত করুন!
+MISSION_M3_NAME,Solar Storm,সৌর ঝড়
+MISSION_M3_GOAL,A solar storm is coming. Build a safe shelter.,সৌর ঝড় আসছে। নিরাপদ আশ্রয় তৈরি করুন।
+MISSION_M4_NAME,The Long Night,দীর্ঘ রাত
+MISSION_M4_GOAL,"Survive {days} days, with {night} dark days.",{night} দিনের অন্ধকার রাতসহ {days} দিন টিকে থাকুন।
+DEBRIEF_NEXT_MISSION,Next mission,পরবর্তী মিশন
+PACK_LOCKED_ITEM,Already packed,আগেই যুক্ত
+TUT_STEP3_GOAL,Your goal: {goal},আপনার লক্ষ্য: {goal}
+CREW_NAME_0,Rafi,রাফি
+CREW_NAME_1,Mira,মীরা
+CREW_NAME_2,Leo,লিও
+CREW_NAME_3,Nadia,নাদিয়া
+CREW_SAY_HELLO,"Ready to work, Commander!","কাজের জন্য প্রস্তুত, কমান্ডার!"
+CREW_SAY_STORM,"Into the shelter, quick!",দ্রুত আশ্রয়ে চলুন!
+CREW_SAY_SICK,I feel dizzy. I need rest.,মাথা ঘুরছে। আমার বিশ্রাম দরকার।
+CREW_SAY_BROKEN,Something broke! Who can fix it?,কিছু ভেঙে গেছে! কে ঠিক করবে?
+CREW_SAY_STUFFY,The air feels stuffy...,বাতাস বেশ ভারী লাগছে...
+CREW_SAY_FOOD_LOW,We are running out of food!,আমাদের খাবার ফুরিয়ে আসছে!
+CREW_SAY_DARK,It's so dark. Is the battery OK?,চারদিক অন্ধকার। ব্যাটারি ঠিক আছে তো?
+CREW_SAY_FIXED,Fixed it!,ঠিক হয়ে গেছে!
+CREW_SAY_SCIENCE,We found something cool in the rocks!,পাথরে চমৎকার কিছু পাওয়া গেছে!
+CREW_SAY_GOOD,All good out here!,এখানে সব ঠিক আছে!
+RES_SCIENCE,Science,বিজ্ঞান
+RES_SCIENCE_VALUE,{n} / {goal},{n} / {goal}
+RES_ENERGY,Energy today,আজকের শক্তি
+RES_SHELTER,Shelter,আশ্রয়
+COLLECT_HINT,Tap the bubbles!,বাবলগুলোতে ট্যাপ করুন!
+AIR_GOOD,Air: good,বাতাস: ভালো
+AIR_STUFFY,Air: stuffy,বাতাস: ভারী
+AIR_DANGER,Air: danger!,বাতাস: বিপজ্জনক!
+ALERT_STORM_TITLE,Solar storm approaching!,সৌর ঝড় এগিয়ে আসছে!
+ALERT_STORM_COUNT,{min} min to impact,আঘাতে আর {min} মিনিট
+ALERT_STORM_SAFE_TITLE,Storm passed — crew safe,ঝড় থেমেছে — ক্রু নিরাপদ
+ALERT_STORM_SAFE_BODY,Dose: {dose} mSv (limit {limit} mSv),ডোজ: {dose} mSv (সীমা {limit} mSv)
+ALERT_METEOR_TITLE,Micrometeoroid strike!,ক্ষুদ্র উল্কার আঘাত!
+ALERT_METEOR_BODY,One solar panel damaged.,একটি সোলার প্যানেল নষ্ট হয়েছে।
+ALERT_RECYCLER_TITLE,Water recycler jammed!,পানির রিসাইক্লার আটকে গেছে!
+ALERT_RECYCLER_BODY,Daily water loss started.,প্রতিদিন পানি ক্ষয় শুরু হয়েছে।
+ALERT_NIGHT_TITLE,Sunset — 14 Earth days of night,সূর্যাস্ত — 14 পৃথিবী-দিনের রাত
+ALERT_NIGHT_BODY,Power stored: {have} / {need} kWh,সঞ্চিত বিদ্যুৎ: {have} / {need} kWh
+ASSIGN_PICK_BUILDING,Where should {name} work?,{name} কোথায় কাজ করবে?
+ASSIGN_CLEAN,Clean,পরিষ্কার
+ASSIGN_REPAIR,Repair,মেরামত
+TUT_TASKS_TITLE,What Each Crew Job Does,কোন কাজের কী ভূমিকা
+TUT_TASKS_BODY,Each job helps your base survive. Pick what the Moonbase needs most today.,প্রতিটি কাজ ঘাঁটি টিকিয়ে রাখে। আজ যা সবচেয়ে জরুরি তা বেছে নিন।
+TUT_TASK_REST_DESC,Heal sickness in {days} days and stay safe during solar storms.,{days} দিনে অসুস্থতা সারুন এবং সৌর ঝড়ে নিরাপদ থাকুন।
+TUT_TASK_REPAIR_DESC,Fix a broken water recycler or solar panel to stop losses.,ক্ষয় থামাতে ভাঙা পানির রিসাইক্লার বা সোলার প্যানেল মেরামত করুন।
+TUT_TASK_CLEAN_DESC,Brush Moon dust off solar panels to keep full power output.,পূর্ণ বিদ্যুৎ পেতে সোলার প্যানেলের চাঁদের ধুলা পরিষ্কার করুন।
+TUT_TASK_FARM_DESC,Keep greenhouse alive every {days} days for O2 and Science.,অক্সিজেন ও বিজ্ঞানের জন্য প্রতি {days} দিনে গ্রিনহাউস সতেজ রাখুন।
+TUT_TASK_REGOLITH_DESC,Pile +{g} g/cm² of Moon soil to block solar storm radiation.,সৌর ঝড়ের রেডিয়েশন ঠেকাতে +{g} g/cm² চাঁদের মাটি জমান।
+TUT_TASK_SCIENCE_DESC,"Run the drill for Science points and unlock NASA Science Cards ({goal} needed for 3 stars).","বিজ্ঞান পয়েন্ট ও নাসার সায়েন্স কার্ড আনলক করতে ড্রিল চালান ({goal} পয়েন্ট প্রয়োজন)।"
+HUD_ON,ON,চালু
+HUD_OFF,OFF,বন্ধ
+HUD_LANGUAGE,Language: {lang},ভাষা: {lang}
+HUD_TOAST_POWER_SHED,Power shed: {list},বিদ্যুৎ বিচ্ছিন্ন: {list}
+HUD_TOAST_BATTERY_PCT,Battery: {pct}%,ব্যাটারি: {pct}%
+HUD_TOAST_CO2_VALUE,CO2: {mmhg} mmHg,CO2: {mmhg} mmHg
+HUD_TOAST_POWER_BATTERY,Power: {kwh} kWh · Battery {pct}%,বিদ্যুৎ: {kwh} kWh · ব্যাটারি {pct}%
+CREW_SICK_DAYS,Sick ({days}d),অসুস্থ ({days} দিন)
+DEBRIEF_CHAIN_DAY,Day {day},দিন {day}
+SRC_SEARCH_PLACEHOLDER,"Search by name, ID, or source...","নাম, ID বা উৎস দিয়ে খুঁজুন..."
+MAP_CREDIT_MOON,Credit: NASA's Scientific Visualization Studio,সূত্র: NASA Scientific Visualization Studio
+CREW_TIRED_LABEL,Tired!,
+CREW_TIRED_WARN,"Too tired! Working today will make {name} sick.",
+CREW_REST_REFILL,Rest: full energy,
+CREW_SAY_TIRED,I am exhausted. Can I rest tomorrow?,
+CREW_SAY_OVERWORKED,I worked too hard and got sick...,
+HINT_TIRED_TITLE,Crew Need Rest!,
+HINT_TIRED_BODY,"Each astronaut has 3 energy pips. Work 3 days, then rest 1 day to refill. Working with 0 energy makes them sick!",
+LOG_CREW_TIRED,{name} got sick from working too hard.,
+ROOT_SUCCESS_2_TIRED,"Mission survived with 2 stars. Missing star: {name} got sick from working too hard. Give everyone a Rest day.",
+BRIEF_NEXT,Next,
+BRIEF_SKIP,Skip,
+BRIEF_GO,Let's go!,
+BRIEF_FACT_BADGE,Real NASA fact,
+GUESS_TITLE,Guess first!,
+GUESS_HINT,It's OK not to know – you will find out by playing!,
+DEBRIEF_NOW_YOU_KNOW,Now you know!,
+DEBRIEF_RIGHT,Correct!,
+DEBRIEF_WRONG,Not quite – here is the answer:,
+DEBRIEF_YOU_GUESSED,Before the mission you guessed: {answer},
+DEBRIEF_LEARNED,You learned,
+DEBRIEF_NASA_NOW,NASA is working on this right now,
+DEBRIEF_NEW_RANK,New rank: {rank}!,
+DEBRIEF_CERTIFICATE,Get your certificate,
+MAP_RANK,Rank: {rank},
+MAP_TRAINING_SCORE,Training score: before {b}/{n} -> after {a}/{n},
+MAP_RESULTS,Results,
+RESULTS_TITLE,Training results,
+RESULTS_COL_MISSION,Mission,
+RESULTS_COL_BEFORE,Before,
+RESULTS_COL_AFTER,After,
+RESULTS_COL_STARS,Stars,
+RESULTS_COPY,Copy,
+RESULTS_COPIED,Copied!,
+RESULTS_NOTE,No names are saved. Results stay on this device.,
+CERT_TITLE,Junior Astronaut Training Complete,
+CERT_LEARNED,You learned:,
+CERT_CARDS,Science Cards: {n} / {total},
+CERT_FOOTER,Moonbase Commander · Team Space-ArenaX · NASA Space Apps Challenge 2026 · Not an official NASA certificate.,
+CERT_BACK,Back to map,
+TITLE_SUBTITLE_TRAINING,Junior Astronaut Training,
+CARD_NEW,New Science Card!,
+CARD_DID_YOU_KNOW,Did you know?,
+CARD_ALBUM_TITLE,Moon Science Cards,
+CARD_ALBUM_COUNT,Cards: {n}/{total},
+CARD_LOCKED,Locked card,
+CARD_HOW_TO_FIND,How to find: {hint},
+CARD_TAB_ALL,All,
+CARD_TAB_MOON,Moon,
+CARD_TAB_SURVIVAL,Survival,
+CARD_TAB_NASA,NASA,
+CARD_CLOSE,Close,
+DEBRIEF_NEW_CARDS,New cards this mission: {n},
+KID_BATTERY,Battery,
+KID_AIR,Air,
+KID_STORM_SAFETY,Storm safety,
+KID_CHARGING,Charging,
+KID_DRAINING,Draining,
+KID_DAYS_LEFT,{n} days left,
+KID_ENOUGH,Enough!,
+KID_STORM_SAFE,Safe,
+KID_STORM_NOT_SAFE,Not safe!,
+KID_AIR_MACHINE_ON,Air machine: on,
+KID_AIR_MACHINE_OFF,Air machine: OFF!,
+KID_RECYCLER_OK,Water recycler: OK,
+KID_RECYCLER_BROKEN,Water recycler: broken!,
+KID_SCIENCE_NUMBERS,Science numbers,
+KID_SHOW_ME,Show me,
+TIP_WATER_REPAIR,The water recycler is broken. Send someone to Repair it!,
+TIP_WATER_PACK,Water is running low. Pack more water next time.,
+TIP_FOOD_PACK,Food is running low. Pack more food next time.,
+TIP_AIR_POWER,The air machine needs power. Turn off the greenhouse lights to save power.,
+TIP_BATTERY_NIGHT,The night is long! Save power for the air machine.,
+TIP_STORM_DIG,Not safe from a solar storm! Send crew to Dig moon soil over the shelter.,
+TIP_ALL_GOOD,All good!,
+HINT_CARD_TITLE,Moon Science Cards!,চাঁদের সায়েন্স কার্ড!
+HINT_CARD_BODY,"Real NASA discoveries unlock as you play! Tap the card notification at the top to pick it up and inspect the science. All cards are saved in your Card Album!","খেলার সাথে সাথে নাসার আসল আবিষ্কারগুলো আনলক হয়! বিজ্ঞান দেখতে ওপরের কার্ড নোটিফিকেশনে ট্যাপ করে সংগ্রহ করুন। সব কার্ড আপনার সায়েন্স অ্যালবামে জমা থাকে!"
+CARD_PICKUP_HINT,Tap to pick up!,সংগ্রহ করতে ট্যাপ করুন!
+CARD_SAVED_ALBUM,Saved to your Moon Science Album! Open it anytime from the Mission Map.,আপনার সায়েন্স অ্যালবামে জমা হয়েছে! মিশন ম্যাপ থেকে যেকোনো সময় দেখতে পারবেন।

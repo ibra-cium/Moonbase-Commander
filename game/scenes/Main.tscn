@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://world/World.tscn" id="2_world"]
+[ext_resource type="PackedScene" path="res://ui/TitleScreen.tscn" id="3_title"]
+[ext_resource type="PackedScene" path="res://ui/SourcesScreen.tscn" id="4_sources"]
+[ext_resource type="PackedScene" path="res://ui/PackScreen.tscn" id="5_pack"]
+[ext_resource type="PackedScene" path="res://ui/DayHud.tscn" id="6_hud"]
+[ext_resource type="PackedScene" path="res://ui/DebriefScreen.tscn" id="7_debrief"]
+[ext_resource type="PackedScene" path="res://ui/EventPopup.tscn" id="8_popup"]
+[ext_resource type="PackedScene" path="res://ui/EndingOverlay.tscn" id="9_ending"]
+[ext_resource type="PackedScene" path="res://ui/TutorialOverlay.tscn" id="10_tutorial"]
+[ext_resource type="PackedScene" path="res://ui/MissionMap.tscn" id="11_mmap"]
+[ext_resource type="PackedScene" path="res://ui/MissionBriefing.tscn" id="12_brief"]
+[ext_resource type="PackedScene" path="res://ui/CertificateScreen.tscn" id="13_cert"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_main")
+
+[node name="World" parent="." instance=ExtResource("2_world")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TitleScreen" parent="UI" instance=ExtResource("3_title")]
+
+[node name="MissionMap" parent="UI" instance=ExtResource("11_mmap")]
+visible = false
+
+[node name="MissionBriefing" parent="UI" instance=ExtResource("12_brief")]
+visible = false
+
+[node name="CertificateScreen" parent="UI" instance=ExtResource("13_cert")]
+visible = false
+
+[node name="SourcesScreen" parent="UI" instance=ExtResource("4_sources")]
+visible = false
+
+[node name="PackScreen" parent="UI" instance=ExtResource("5_pack")]
+visible = false
+
+[node name="DayHud" parent="UI" instance=ExtResource("6_hud")]
+visible = false
+
+[node name="DebriefScreen" parent="UI" instance=ExtResource("7_debrief")]
+visible = false
+
+[node name="EventPopup" parent="UI" instance=ExtResource("8_popup")]
+visible = false
+
+[node name="EndingOverlay" parent="UI" instance=ExtResource("9_ending")]
+visible = false
+
+[node name="TutorialOverlay" parent="UI" instance=ExtResource("10_tutorial")]
+visible = false

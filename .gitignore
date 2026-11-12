@@ -18,3 +18,7 @@ Thumbs.db
 # Secrets
 .env
 .env.*
+
+# Tools
+tools/godot_path.txt
+

@@ -1,0 +1,340 @@
+{
+  "_meta": {
+    "about": "Debrief facts for kids. 'bn' is filled by the team (Samia). Shown with its source in the debrief.",
+    "added": "2026-11-09 (F01–F16) and 2026-11-11 (F17–F29), drafted with Claude (AI) - team checks each fact against its link"
+  },
+  "facts": [
+    {
+      "id": "F01",
+      "tags": [
+        "night",
+        "sunset",
+        "blackout"
+      ],
+      "en": "One day on the Moon lasts about 29.5 Earth days. So the night lasts about two weeks!",
+      "bn": "চাঁদে একটি দিন পৃথিবীর প্রায় 29.5 দিনের সমান। তাই সেখানে রাত প্রায় দুই সপ্তাহ দীর্ঘ হয়!",
+      "source": "NASA SVS – 100 Lunar Days",
+      "link": "https://svs.gsfc.nasa.gov/12739/"
+    },
+    {
+      "id": "F02",
+      "tags": [
+        "night",
+        "temperature"
+      ],
+      "en": "At night the Moon's ground can get as cold as about −183 °C. In the day it can reach about 106 °C.",
+      "bn": "রাতে চাঁদের মাটি প্রায় -183 °C পর্যন্ত ঠান্ডা হতে পারে, আর দিনে প্রায় 106 °C পর্যন্ত গরম হয়।",
+      "source": "NASA NTRS – The Lunar Environment (Diviner data)",
+      "link": "https://ntrs.nasa.gov/api/citations/20220005243/downloads/RFC%20for%20Lunar%20Surface%20Applications%20SPW%2004062022.pdf"
+    },
+    {
+      "id": "F03",
+      "tags": [
+        "south_pole",
+        "solar"
+      ],
+      "en": "Some spots on the rim of Shackleton crater near the South Pole get sunlight more than 90 % of the year.",
+      "bn": "চাঁদের দক্ষিণ মেরুর কাছে শ্যাকলটন গহ্বরের কিনারার কিছু অংশে বছরের 90 %-এর বেশি সময় সূর্যের আলো থাকে।",
+      "source": "NASA Science – Shackleton Crater's Illuminated Rim & Shadowed Interior",
+      "link": "https://science.nasa.gov/resource/shackleton-craters-illuminated-rim-shadowed-interior/"
+    },
+    {
+      "id": "F04",
+      "tags": [
+        "dust",
+        "solar"
+      ],
+      "en": "In a NASA test, Moon-like dust on solar cells cut their power by almost 40 %.",
+      "bn": "NASA-র এক পরীক্ষায় দেখা গেছে, সোলার কোষে চাঁদের মতো ধুলা জমলে বিদ্যুৎ উৎপাদন প্রায় 40 % কমে যায়।",
+      "source": "NASA/TM-20240003496 – Lunar Dust Review",
+      "link": "https://ntrs.nasa.gov/api/citations/20240003496/downloads/TM-20240003496.pdf"
+    },
+    {
+      "id": "F05",
+      "tags": [
+        "oxygen",
+        "air"
+      ],
+      "en": "Every astronaut breathes about 0.9 kg of oxygen every day.",
+      "bn": "প্রতিজন নভোচারী প্রতিদিন প্রায় 0.9 kg অক্সিজেন শ্বাস নেন।",
+      "source": "NASA Life Support Baseline Values and Assumptions Document (BVAD) Rev. 2",
+      "link": "https://ntrs.nasa.gov/citations/20210024855"
+    },
+    {
+      "id": "F06",
+      "tags": [
+        "water",
+        "recycler"
+      ],
+      "en": "On the ISS about 98 % of water is recovered. Astronauts drink water that was once sweat and urine!",
+      "bn": "আন্তর্জাতিক মহাকাশ স্টেশনে (ISS) প্রায় 98 % পানি পুনরুদ্ধার করা হয় — নভোচারীরা ঘাম ও প্রস্রাব থেকে শোধন করা পানিও পান করেন!",
+      "source": "Status of ISS Water Management and Recovery, ICES-2024-317",
+      "link": "https://ntrs.nasa.gov/citations/20240005472"
+    },
+    {
+      "id": "F07",
+      "tags": [
+        "greenhouse",
+        "plants"
+      ],
+      "en": "Astronauts grew red romaine lettuce on the ISS in 33 days, and in 2015 the crew ate half of a space-grown crop.",
+      "bn": "ISS-এ নভোচারীরা 33 দিনে লাল রোমেইন লেটুস চাষ করেন, এবং 2015 সালে মহাকাশে জন্মানো ফসলের অর্ধেক তাঁরা খান।",
+      "source": "Veggie: Space Vegetables for the ISS and Beyond – G. D. Massa (NASA)",
+      "link": "https://ntrs.nasa.gov/citations/20160004060"
+    },
+    {
+      "id": "F08",
+      "tags": [
+        "crew",
+        "exercise"
+      ],
+      "en": "ISS astronauts spend about 2.5 hours every day on exercise (with setup) to keep their bones and muscles strong.",
+      "bn": "হাড় ও পেশি শক্ত রাখতে ISS-এর নভোচারীরা প্রস্তুতিসহ প্রতিদিন প্রায় 2.5 ঘণ্টা ব্যায়াম করেন।",
+      "source": "Early Assessments of Crew Timelines for the Lunar Surface Habitat (NASA)",
+      "link": "https://ntrs.nasa.gov/citations/20220013436"
+    },
+    {
+      "id": "F09",
+      "tags": [
+        "storm",
+        "radiation"
+      ],
+      "en": "In August 1972 a huge solar storm happened between Apollo 16 and Apollo 17. It was a near miss for the astronauts!",
+      "bn": "1972 সালের আগস্টে অ্যাপোলো 16 ও 17-এর মাঝামাঝি সময়ে বিশাল সৌর ঝড় হয় — নভোচারীরা অল্পের জন্য বেঁচে যান!",
+      "source": "NASA SVS – How NASA Will Protect Astronauts From Space Radiation",
+      "link": "https://svs.gsfc.nasa.gov/13275"
+    },
+    {
+      "id": "F10",
+      "tags": [
+        "radiation"
+      ],
+      "en": "Cosmic-ray radiation on the Moon's surface is about 2.6 times the cosmic-ray dose inside the ISS.",
+      "bn": "চাঁদের পৃষ্ঠে মহাজাগতিক রশ্মির বিকিরণ ISS-এর ভেতরের মাত্রার তুলনায় প্রায় 2.6 গুণ বেশি।",
+      "source": "Zhang et al. 2020, First measurements of the radiation dose on the lunar surface, Science Advances 6, eaaz1334 (peer-reviewed; Chang'e 4)",
+      "link": "https://doi.org/10.1126/sciadv.aaz1334"
+    },
+    {
+      "id": "F11",
+      "tags": [
+        "storm",
+        "warning"
+      ],
+      "en": "Fast solar electrons arrive about one hour before the dangerous protons – that is the crew's warning to hide.",
+      "bn": "দ্রুতগতির সৌর ইলেকট্রন বিপজ্জনক প্রোটনের প্রায় এক ঘণ্টা আগে পৌঁছায় — এটাই ক্রুদের আশ্রয়ে যাওয়ার সতর্ক সংকেত।",
+      "source": "REleASE solar proton forecasting – A. Posner (NASA HQ), CCMC Workshop 2010",
+      "link": "https://ccmc.gsfc.nasa.gov/publicData/workshops/2010/Tuesday_pdf/Posner_REleASE_CCMCWS_final.pdf"
+    },
+    {
+      "id": "F12",
+      "tags": [
+        "gravity",
+        "myth"
+      ],
+      "en": "MYTH: There is no gravity on the Moon. TRUTH: Moon gravity is one-sixth of Earth's – that is why astronauts bounce.",
+      "bn": "ভুল ধারণা: চাঁদে কোনো মাধ্যাকর্ষণ নেই। সত্য: চাঁদের মাধ্যাকর্ষণ পৃথিবীর ছয় ভাগের এক ভাগ — তাই নভোচারীরা লাফিয়ে চলেন।",
+      "source": "NASA Science – Moon Facts (updated 12 Feb 2026)",
+      "link": "https://science.nasa.gov/moon/facts/"
+    },
+    {
+      "id": "F13",
+      "tags": [
+        "myth",
+        "sunlight"
+      ],
+      "en": "MYTH: The \"dark side\" of the Moon is always dark. TRUTH: The far side gets just as much sunlight as the side we see.",
+      "bn": "ভুল ধারণা: চাঁদের \"অন্ধকার পাশ\" সব সময় অন্ধকার থাকে। সত্য: দূরের দিকটিও আমাদের দেখা দিকের মতোই সূর্যালোক পায়।",
+      "source": "NASA StarChild – The Dark Side of the Moon",
+      "link": "https://starchild.gsfc.nasa.gov/docs/StarChild/solar_system_level2/dark_side.html"
+    },
+    {
+      "id": "F14",
+      "tags": [
+        "myth",
+        "gravity"
+      ],
+      "en": "MYTH: Astronauts float because there is no gravity in space. TRUTH: At the ISS gravity is still about 90 %. They float because they are falling around Earth.",
+      "bn": "ভুল ধারণা: মহাকাশে কোনো মাধ্যাকর্ষণ না থাকায় নভোচারীরা ভাসেন। সত্য: ISS-এ পৃথিবীর প্রায় 90 % মাধ্যাকর্ষণ থাকে; তাঁরা পৃথিবীর চারপাশে পড়তে থাকার কারণেই ভাসেন।",
+      "source": "NASA – What Is Microgravity? (Grades 5–8)",
+      "link": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-microgravity-grades-5-8/"
+    },
+    {
+      "id": "F15",
+      "tags": [
+        "dust"
+      ],
+      "en": "Moon dust grains can be smaller than 20 microns and sharp like glass. On Apollo they even tore spacesuits.",
+      "bn": "চাঁদের ধুলার কণা 20 মাইক্রনেরও ছোট এবং কাঁচের মতো ধারালো। অ্যাপোলো মিশনে এগুলো স্পেসস্যুটও ছিঁড়ে ফেলেছিল।",
+      "source": "NASA – Dust: An Out of This World Problem (2021)",
+      "link": "https://www.nasa.gov/humans-in-space/dust-an-out-of-this-world-problem"
+    },
+    {
+      "id": "F16",
+      "tags": [
+        "meteoroid"
+      ],
+      "en": "In 2013 a 40 kg space rock hit the Moon at 25 km per second and made a crater 18 m wide.",
+      "bn": "2013 সালে 40 kg ওজনের একটি মহাকাশ শিলা প্রতি সেকেন্ডে 25 km বেগে চাঁদে আঘাত করে 18 m চওড়া গহ্বর তৈরি করে।",
+      "source": "NASA SVS – March 17, 2013 Lunar Impact Forms a New Crater",
+      "link": "https://svs.gsfc.nasa.gov/4242"
+    },
+    {
+      "id": "F17",
+      "tags": [
+        "ice",
+        "water",
+        "south_pole",
+        "science"
+      ],
+      "en": "In 2009 NASA crashed a used rocket into a dark crater near the Moon's South Pole – and found water ice there!",
+      "bn": "",
+      "source": "NASA Science – LCROSS (Lunar Crater Observation and Sensing Satellite)",
+      "link": "https://science.nasa.gov/mission/lcross/"
+    },
+    {
+      "id": "F18",
+      "tags": [
+        "moonquake",
+        "science",
+        "apollo"
+      ],
+      "en": "The Moon shakes too! Seismometers left by Apollo astronauts recorded 28 shallow moonquakes from 1969 to 1977.",
+      "bn": "",
+      "source": "Smithsonian – New Analysis Shows the Moon Is Tectonically Active (2019, study funded by NASA's LRO mission)",
+      "link": "https://dashboard.si.edu/newsdesk/releases/new-analysis-shows-moon-tectonically-active"
+    },
+    {
+      "id": "F19",
+      "tags": [
+        "distance",
+        "science",
+        "apollo"
+      ],
+      "en": "The Moon moves about 3.8 cm farther from Earth every year. Scientists measure it by bouncing lasers off mirrors that Apollo astronauts left there.",
+      "bn": "",
+      "source": "NASA Eclipse Website – Measuring the Moon's Distance (Apollo laser ranging)",
+      "link": "https://eclipse.gsfc.nasa.gov/help/ApolloLaser.html"
+    },
+    {
+      "id": "F20",
+      "tags": [
+        "formation",
+        "science"
+      ],
+      "en": "Scientists think the Moon was born about 4.5 billion years ago, when an object maybe as big as Mars smashed into the young Earth.",
+      "bn": "",
+      "source": "NASA Science – Moon Formation",
+      "link": "https://science.nasa.gov/moon/formation/"
+    },
+    {
+      "id": "F21",
+      "tags": [
+        "samples",
+        "science",
+        "apollo"
+      ],
+      "en": "Apollo astronauts brought 382 kg of Moon rocks and soil back to Earth for scientists to study.",
+      "bn": "",
+      "source": "NASA Astromaterials (JSC) – The Lunar Sample Collection",
+      "link": "https://astromaterials.jsc.nasa.gov/education/_documents/The%20Lunar%20Sample%20Collection.pdf"
+    },
+    {
+      "id": "F22",
+      "tags": [
+        "oxygen",
+        "air",
+        "water"
+      ],
+      "en": "On the space station, a machine makes oxygen by splitting water with electricity. This is called electrolysis!",
+      "bn": "",
+      "source": "NASA NTRS – Oxygen Generation Assembly Technology Development (ISS)",
+      "link": "https://ntrs.nasa.gov/citations/19990087366"
+    },
+    {
+      "id": "F23",
+      "tags": [
+        "regolith",
+        "radiation",
+        "shield"
+      ],
+      "en": "NASA research shows that Moon soil, called regolith, blocks radiation about as well as aluminum.",
+      "bn": "",
+      "source": "NASA NTRS – Potential Use of In Situ Material Composites such as Regolith/Polyethylene for Shielding Space Radiation",
+      "link": "https://ntrs.nasa.gov/citations/20100042349"
+    },
+    {
+      "id": "F24",
+      "tags": [
+        "radiation",
+        "storm",
+        "artemis",
+        "nasa_now"
+      ],
+      "en": "On Artemis I in 2022, two test dummies named Helga and Zohar flew around the Moon to measure radiation. Zohar wore a special protective vest.",
+      "bn": "",
+      "source": "DLR (German Aerospace Center) – The MARE radiation experiment on board Artemis I",
+      "link": "https://www.dlr.de/en/research-and-transfer/featured-topics/mission-moon/artemis-programme/the-mare-cosmic-radiation-experiment-on-board-artemis-i"
+    },
+    {
+      "id": "F25",
+      "tags": [
+        "reactor",
+        "night",
+        "power",
+        "nasa_now"
+      ],
+      "en": "NASA is working on a small nuclear reactor for the Moon, so a base has power even during the 14½-day lunar night.",
+      "bn": "",
+      "source": "NASA – Fission Surface Power Project Energizes Lunar Exploration",
+      "link": "https://www.nasa.gov/centers-and-facilities/glenn/nasas-fission-surface-power-project-energizes-lunar-exploration"
+    },
+    {
+      "id": "F26",
+      "tags": [
+        "night",
+        "power",
+        "battery",
+        "nasa_challenge"
+      ],
+      "en": "In NASA's Watts on the Moon Challenge, a team from the University of California, Santa Barbara won $1 million for a better way to move and store power on the Moon.",
+      "bn": "",
+      "source": "NASA – NASA Awards $1.5 Million at Watts on the Moon Challenge Finale",
+      "link": "https://www.nasa.gov/?p=734086"
+    },
+    {
+      "id": "F27",
+      "tags": [
+        "ice",
+        "water",
+        "nasa_challenge"
+      ],
+      "en": "NASA's Break the Ice Lunar Challenge (2020–2024) asked inventors to build robots that dig icy Moon soil, so future crews can get water there.",
+      "bn": "",
+      "source": "NASA Centennial Challenges – Break the Ice Lunar Challenge",
+      "link": "https://www.nasa.gov/prizes-challenges-and-crowdsourcing/centennial-challenges/break-the-ice-challenge"
+    },
+    {
+      "id": "F28",
+      "tags": [
+        "recycling",
+        "nasa_challenge"
+      ],
+      "en": "NASA's LunaRecycle Challenge asks people to invent ways to recycle trash on the Moon. A student team from MIT won first prize in Phase 2.",
+      "bn": "",
+      "source": "NASA Centennial Challenges – LunaRecycle Challenge (2025–2026)",
+      "link": "https://www.nasa.gov/prizes-challenges-and-crowdsourcing/centennial-challenges/lunarecycle/"
+    },
+    {
+      "id": "F29",
+      "tags": [
+        "sleep",
+        "crew",
+        "rest"
+      ],
+      "en": "Astronauts often sleep less in space than on Earth. NASA studies this, because tired crews can make more mistakes.",
+      "bn": "",
+      "source": "NASA HRP Evidence Report – Risk of Performance Decrements and Adverse Health Outcomes Resulting from Sleep Loss, Circadian Desynchronization, and Work Overload",
+      "link": "https://ntrs.nasa.gov/api/citations/20160003864/downloads/20160003864.pdf"
+    }
+  ]
+}

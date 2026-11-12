@@ -1,0 +1,473 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8tlyxdebrief01"]
+
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/debrief_screen.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://ui/SourceTag.tscn" id="3_sourcetag"]
+[ext_resource type="Texture2D" path="res://assets/icons/warning.svg" id="4_warning"]
+[ext_resource type="Texture2D" path="res://assets/icons/science.svg" id="5_science"]
+[ext_resource type="Texture2D" path="res://assets/icons/star.svg" id="6_star"]
+[ext_resource type="Texture2D" path="res://assets/icons/check.svg" id="7_check"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.02, 0.025, 0.04, 0.88)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 28.0
+content_margin_top = 18.0
+content_margin_right = 28.0
+content_margin_bottom = 18.0
+bg_color = Color(0.078431375, 0.09411765, 0.12941177, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.24, 0.28, 0.38, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_callout"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0.12, 0.14, 0.19, 0.85)
+border_width_left = 4
+border_color = Color(0.9490196, 0.75686276, 0.30588236, 1)
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fact"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.09, 0.12, 0.17, 0.8)
+border_width_left = 4
+border_color = Color(0.23921569, 0.54509807, 0.8509804, 1)
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+
+[node name="DebriefScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Backdrop" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(860, 640)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="CenterContainer/Panel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6039216, 0.6392157, 0.69803923, 1)
+theme_override_font_sizes/font_size = 16
+text = "Mission Debrief"
+horizontal_alignment = 1
+
+[node name="OutcomeLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.26666668, 0.7019608, 0.3529412, 1)
+theme_override_font_sizes/font_size = 28
+text = "Mission Success!"
+horizontal_alignment = 1
+
+[node name="StarsLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.75686276, 0.30588236, 1)
+theme_override_font_sizes/font_size = 32
+text = "★ ★ ★"
+horizontal_alignment = 1
+
+[node name="DaysLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Completed 30 of 30 days"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 260)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentVBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="RootCausePanel" type="PanelContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_callout")
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/RootCausePanel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Header" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/RootCausePanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.75686276, 0.30588236, 1)
+theme_override_font_sizes/font_size = 13
+text = "ANALYSIS"
+
+[node name="ReasonLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/RootCausePanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.9647059, 1)
+theme_override_font_sizes/font_size = 17
+text = ""
+autowrap_mode = 2
+
+[node name="StormDisclosureBox" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="StormIcon" type="TextureRect" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/StormDisclosureBox"]
+modulate = Color(0.9490196, 0.75686276, 0.30588236, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("4_warning")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StormChanceLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/StormDisclosureBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9058824, 0.8862745, 1)
+theme_override_font_sizes/font_size = 15
+text = "Real chance of a strong storm in 30 days: about 10 %"
+
+[node name="StormSourceTag" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/StormDisclosureBox" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+constant_id = "SPE_CHANCE_STRONG_MISSION"
+
+[node name="TimelineSection" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TimelineHeader" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/TimelineSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6039216, 0.6392157, 0.69803923, 1)
+theme_override_font_sizes/font_size = 13
+text = "MISSION TIMELINE"
+
+[node name="TimelineVBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/TimelineSection"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="FactPanel" type="PanelContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fact")
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/FactPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HeaderBox" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/FactPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="FactIcon" type="TextureRect" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/FactPanel/VBox/HeaderBox"]
+modulate = Color(0.23921569, 0.54509807, 0.8509804, 1)
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+texture = ExtResource("5_science")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FactTitle" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/FactPanel/VBox/HeaderBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23921569, 0.54509807, 0.8509804, 1)
+theme_override_font_sizes/font_size = 13
+text = "MOON FACT"
+
+[node name="FactLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/FactPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.9647059, 1)
+theme_override_font_sizes/font_size = 15
+text = ""
+autowrap_mode = 2
+
+[node name="FactSourceLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/FactPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6039216, 0.6392157, 0.69803923, 1)
+theme_override_font_sizes/font_size = 13
+text = ""
+horizontal_alignment = 2
+
+[node name="QuestionSection" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="QuestionTitleLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 22
+text = "Now you know!"
+autowrap_mode = 3
+
+[node name="QuestionPromptLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 19
+text = "Question?"
+autowrap_mode = 3
+
+[node name="QuestionOptionsVBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="FeedbackPanel" type="PanelContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fact")
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatusRow" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FeedbackIcon" type="TextureRect" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox/StatusRow"]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("7_check")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FeedbackMark" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox/StatusRow"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.878431, 0.282353, 0.282353, 1)
+theme_override_font_sizes/font_size = 20
+text = "×"
+
+[node name="FeedbackLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox/StatusRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Correct!"
+autowrap_mode = 3
+
+[node name="ExplainRow" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ExplainLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox/ExplainRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 16
+text = "Explanation"
+autowrap_mode = 3
+
+[node name="ExplainSourceTag" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox/ExplainRow" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="YouGuessedLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/QuestionSection/FeedbackPanel/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 15
+text = "Before the mission you guessed:"
+autowrap_mode = 3
+
+[node name="LessonSection" type="PanelContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_callout")
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/LessonSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderRow" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/LessonSection/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BadgeIcon" type="TextureRect" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/LessonSection/VBox/HeaderRow"]
+modulate = Color(0.94902, 0.756863, 0.305882, 1)
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LessonTitleLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/LessonSection/VBox/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 20
+text = "You learned"
+autowrap_mode = 3
+
+[node name="LessonBodyLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/LessonSection/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 18
+text = "Mission lesson"
+autowrap_mode = 3
+
+[node name="NasaNowSection" type="PanelContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fact")
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/NasaNowSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderRow" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/NasaNowSection/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NasaIcon" type="TextureRect" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/NasaNowSection/VBox/HeaderRow"]
+modulate = Color(0.239216, 0.545098, 0.85098, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_science")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NasaNowTitleLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/NasaNowSection/VBox/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.454902, 0.72549, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "NASA is working on this right now"
+autowrap_mode = 3
+
+[node name="NasaNowSourceTag" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/NasaNowSection/VBox/HeaderRow" instance=ExtResource("3_sourcetag")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="NasaNowBodyLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/NasaNowSection/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 17
+text = "NASA research fact"
+autowrap_mode = 3
+
+[node name="RankUpSection" type="PanelContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_callout")
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/RankUpSection"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="RankStarIcon" type="TextureRect" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/RankUpSection/VBox"]
+modulate = Color(0.94902, 0.756863, 0.305882, 1)
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_star")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RankUpLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox/ScrollContainer/ContentVBox/RankUpSection/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 24
+text = "New rank: Junior Astronaut!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SeedLabel" type="Label" parent="CenterContainer/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.54, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "Seed: 0"
+horizontal_alignment = 1
+
+[node name="StepFooter" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="StepNextButton" type="Button" parent="CenterContainer/Panel/Margin/VBox/StepFooter"]
+custom_minimum_size = Vector2(200, 64)
+layout_mode = 2
+text = "Next"
+
+[node name="CertRow" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="CertificateButton" type="Button" parent="CenterContainer/Panel/Margin/VBox/CertRow"]
+visible = false
+custom_minimum_size = Vector2(240, 64)
+layout_mode = 2
+text = "Get your certificate"
+
+[node name="ButtonBox" type="HBoxContainer" parent="CenterContainer/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="CenterContainer/Panel/Margin/VBox/ButtonBox"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Retry Mission"
+
+[node name="ChangeCargoButton" type="Button" parent="CenterContainer/Panel/Margin/VBox/ButtonBox"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Change Cargo"
+
+[node name="TitleButton" type="Button" parent="CenterContainer/Panel/Margin/VBox/ButtonBox"]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Title Screen"
+
+[node name="NextMissionButton" type="Button" parent="CenterContainer/Panel/Margin/VBox/ButtonBox"]
+visible = false
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next Mission"

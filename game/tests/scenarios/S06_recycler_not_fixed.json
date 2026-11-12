@@ -1,0 +1,27 @@
+{
+  "id": "S06_recycler_not_fixed",
+  "cargo": {
+    "solar": 20,
+    "battery": 4,
+    "reactor": 2,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 4,
+    "food": 5,
+    "shield": 10
+  },
+  "seed": 1,
+  "rule": "NOFIX",
+  "force": {
+    "storm_day": 10,
+    "recycler_day": 12,
+    "meteoroid_day": 0
+  },
+  "expect": {
+    "outcome": "EVAC_WATER",
+    "end_day": 20,
+    "stars": 0,
+    "root": "ROOT_REPAIR"
+  }
+}
+

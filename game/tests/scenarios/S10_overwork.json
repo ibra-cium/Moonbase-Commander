@@ -1,0 +1,27 @@
+{
+  "id": "S10_overwork",
+  "cargo": {
+    "solar": 20,
+    "battery": 4,
+    "reactor": 2,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 4,
+    "food": 5,
+    "shield": 10
+  },
+  "seed": 1,
+  "rule": "ALLWORK",
+  "force": {
+    "storm_day": 10,
+    "recycler_day": 99,
+    "meteoroid_day": 0
+  },
+  "expect": {
+    "outcome": "SURVIVED",
+    "end_day": 30,
+    "stars": 1,
+    "root": "ROOT_SUCCESS",
+    "ever_tired": true
+  }
+}

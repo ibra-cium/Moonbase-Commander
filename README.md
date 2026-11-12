@@ -4,9 +4,19 @@
 
 **NASA Space Apps Challenge 2026** · Challenge: [Build a Junior Astronaut Mission Trainer](https://www.spaceappschallenge.org/2026/challenges/build-a-junior-astronaut-mission-trainer/) · Local event: Dhaka, Bangladesh · Team: **Space-ArenaX**
 
-> **Status: concept stage.** The game will be built during the hackathon on 13–14 November 2026. All code, data and documentation from the event will be added to this repository.
+> **Play in your browser:** [https://ibra-cium.github.io/Moonbase-Commander/](https://ibra-cium.github.io/Moonbase-Commander/) (runs on phones and computers)
 
 **Video:** [240-second prescreening video]([YouTube link])
+
+---
+
+## How to play
+
+1. **Pick a mission:** Choose from four progressively challenging missions on the Mission Map, from a 5-day starter to the full 30-day lunar night survival.
+2. **Guess first:** Answer the junior astronaut briefing question from Mission Control to test your instinct before launch.
+3. **Pack your lander:** Balance limited cargo mass between solar panels, batteries, a nuclear reactor, life-support supplies, a greenhouse, and storm shielding.
+4. **Command the base:** Each day, tap astronauts to assign duties (repairing modules, farming, piling lunar regolith, researching science, or resting) and toggle power switches.
+5. **Debrief and master:** Overcome solar storms, equipment breakdowns, and the dark night; inspect your cause-chain debrief, earn stars, and collect Moon Science Cards!
 
 ---
 
@@ -18,11 +28,11 @@ More detail: [docs/challenge.md](docs/challenge.md)
 
 ## Our idea
 
-Moonbase Commander is a short, replayable browser game for students aged 10–14. One run takes 10–15 minutes.
+Moonbase Commander is a short, replayable browser game for students aged 7–13. One mission takes 3–15 minutes.
 
 1. **Pack.** Fill a lander up to a fixed cargo mass: solar panels, batteries, a small reactor, a greenhouse, water, oxygen and shielding.
-2. **Survive.** Keep four astronauts alive for 30 days, one turn per day. That is one full lunar day: about 15 days of sunlight, then about 15 days of darkness.
-3. **Debrief.** If the base fails, the game shows the exact chain of what went wrong, plus one real science fact.
+2. **Survive.** Keep four astronauts alive for the mission duration. The final mission runs a full lunar day (30 Earth days): about 15 days of sunlight, then about 15 days of freezing darkness.
+3. **Debrief.** If the base fails, the game shows the exact chain of what went wrong, plus real science facts.
 4. **Retry.** Try again with a better plan.
 
 The four systems pull on each other:
@@ -42,19 +52,27 @@ Full concept: [docs/concept.md](docs/concept.md)
 
 NASA is going back to the Moon to stay, and the people who will live and work there are in school today. Moonbase Commander lets them feel real mission trade-offs instead of memorising facts. Kids learn by failing, understanding why, and trying again.
 
-We are designing it to run in any phone browser and to support both **English and Bangla**, so students in Bangladesh can play it in their own language.
+It runs in any phone or desktop browser and supports both **English and Bangla**, so students in Bangladesh can play and learn space science in their own language.
+
+## Impact
+
+- **Who it is for:** Kids aged 7–13 at school or at home, running in any mobile or desktop browser in both **English and Bangla** with zero setup.
+- **What kids learn:** Real mission trade-offs across power, life support, radiation, and crew rest—reinforced through 29 collectible Moon Science Cards unlocked at key moments.
+- **How it helps NASA:** Connects students directly to active NASA initiatives (Fission Surface Power, Watts on the Moon, Break the Ice, LunaRecycle, and Artemis I MARE) and demonstrates why these challenges matter today.
+- **Measurable learning score:** Built-in "Guess first!" pre-mission questions and post-mission debrief answers give teachers and parents tangible before-and-after proof of learning.
+- **Playtest results:** Tested with ___ kids aged ___. Before: ___ / ___ correct; After: ___ / ___ correct; Science cards collected per kid: ___.
+- Learn more in our full [docs/impact.md](docs/impact.md).
 
 ## Science and NASA data
 
-Our rule: **every number in the game comes from a NASA source, and the game shows that source to the player.** Where we simplify the science for gameplay, we say so.
+Our hard rule: **every number in the game comes from a NASA source, and the game shows that source to the player.** Where we simplify the science for gameplay, we label it as a "Game assumption" or "Game setting".
 
-NASA releases the full challenge statement and its datasets on 28 October 2026. Every dataset and source we use will be listed in [data/sources.md](data/sources.md), together with what we used it for and how.
+Every single value used in the game is catalogued with its exact NASA source document, link, and notes in [data/sources.md](data/sources.md). Players can also inspect sources live in the game by tapping the ⓘ source tag beside any gauge or pack item, or by opening the in-game **Sources** screen from the title screen or pause menu.
 
-## Planned tech
+## Tech stack
 
-- Browser game that plays on phones and laptops from one link, with no install
-- Engine: Godot 4 (web export) or HTML5 Canvas with JavaScript, final choice on Day 1
-- Languages: English and Bangla
+- Godot 4.6.3, 3D low-poly, web export (Compatibility renderer), plays in phone and laptop browsers
+- Dual languages: English and Bangla (with dedicated Noto Sans Bengali font fallback)
 
 ## Team Space-ArenaX
 
@@ -73,9 +91,11 @@ moonbase-commander/
 ├── README.md          this page
 ├── CONTRIBUTING.md    how our team works in this repo
 ├── LICENSE            MIT
-├── docs/              challenge, concept, timeline and AI-use log
+├── docs/              challenge, concept, impact, timeline and AI-use log
+│   └── ai-prompts/    prompt of every AI coding task
 ├── data/              NASA sources for every number in the game
-├── game/              game code (built during the hackathon)
+├── game/              game code (Godot 4.6.3 project)
+├── tools/             helper scripts
 └── media/             video links and screenshots
 ```
 
@@ -85,11 +105,19 @@ Key dates are in [docs/timeline.md](docs/timeline.md).
 
 ## Use of AI
 
-Every AI tool we use is named in [docs/ai-usage.md](docs/ai-usage.md), with what we used it for and the prompts behind it.
+We follow the NASA Space Apps Challenge AI policy completely and transparently. Every AI tool used during development is documented in [docs/ai-usage.md](docs/ai-usage.md), with dates, models, developers, and exact scope. Each individual AI-assisted coding task also has its full prompt and change summary recorded in [docs/ai-prompts/](docs/ai-prompts/).
 
 ## Credits
 
-NASA images and data are credited wherever they are used. Any third-party asset, library or tool will be listed here.
+- 3D models: KayKit Space Base Bits by Kay Lousberg (CC0)
+- 3D models: Ultimate Space Kit by Quaternius (CC0)
+- UI assets: Sci-Fi UI Pack by Kenney (CC0)
+- Particles and sounds: Particle Pack, Sci-fi Sounds and Interface Sounds by Kenney (CC0)
+- Moon maps: CGI Moon Kit, NASA's Scientific Visualization Studio (Lunar Reconnaissance Orbiter data)
+- Earth map: Blue Marble Next Generation, NASA Earth Observatory
+- Spacecraft models: NASA 3D Resources
+- Icons: Material Icons by Google (Apache License 2.0)
+- Fonts: Noto Sans and Noto Sans Bengali (SIL Open Font License 1.1)
 
 ## License
 

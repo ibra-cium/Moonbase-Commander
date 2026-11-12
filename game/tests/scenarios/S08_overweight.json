@@ -1,0 +1,23 @@
+{
+  "id": "S08_overweight",
+  "cargo": {
+    "solar": 40,
+    "battery": 60,
+    "reactor": 3,
+    "greenhouse": 20,
+    "o2": 20,
+    "water": 20,
+    "food": 20,
+    "shield": 20
+  },
+  "seed": 1,
+  "rule": "REST",
+  "force": {},
+  "expect": {
+    "outcome": "INVALID",
+    "end_day": 0,
+    "stars": 0,
+    "root": "CARGO_INVALID"
+  }
+}
+

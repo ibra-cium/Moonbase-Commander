@@ -1,0 +1,760 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/day_hud.gd" id="2_script"]
+[ext_resource type="Texture2D" path="res://assets/icons/wb_sunny.svg" id="6_sun"]
+[ext_resource type="PackedScene" path="res://ui/Gauge.tscn" id="7_gauge"]
+[ext_resource type="PackedScene" path="res://ui/CrewCard.tscn" id="8_crewcard"]
+[ext_resource type="Texture2D" path="res://assets/icons/volume_up.svg" id="9_vol_up"]
+[ext_resource type="PackedScene" path="res://ui/SourceTag.tscn" id="10_sourcetag"]
+[ext_resource type="Texture2D" path="res://assets/icons/science.svg" id="11_science"]
+[ext_resource type="Texture2D" path="res://assets/icons/bolt.svg" id="12_bolt"]
+[ext_resource type="Texture2D" path="res://assets/icons/shield.svg" id="13_shield"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_res_pill"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.06, 0.09, 0.15, 0.72)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.18)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_day_pill"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.06, 0.09, 0.15, 0.7)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.18)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glass_btn_normal"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 0.08)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.2)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glass_btn_hover"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 0.16)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.75, 1, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glass_btn_pressed"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 0.04)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.65, 0.95, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_end_day_normal"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.95, 0.76, 0.22, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.9, 0.45, 0.95)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_end_day_hover"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.82, 0.3, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.95, 0.6, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_end_day_pressed"]
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+bg_color = Color(0.85, 0.65, 0.15, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.75, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toast"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.078431375, 0.09411765, 0.12941177, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.65, 0.95, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pause"]
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.078431375, 0.09411765, 0.12941177, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.45, 0.65, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="DayHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="BubblesLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopBar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 16
+
+[node name="HBox" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="LeftSpacer" type="Control" parent="TopBar/HBox"]
+custom_minimum_size = Vector2(252, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CenterSpacer1" type="Control" parent="TopBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="DayInfo" type="PanelContainer" parent="TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_day_pill")
+
+[node name="Margin" type="MarginContainer" parent="TopBar/HBox/DayInfo"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 4
+
+[node name="HBox" type="HBoxContainer" parent="TopBar/HBox/DayInfo/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SunNightIcon" type="TextureRect" parent="TopBar/HBox/DayInfo/Margin/HBox"]
+modulate = Color(0.94902, 0.756863, 0.305882, 1)
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_sun")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SunNightLabel" type="Label" parent="TopBar/HBox/DayInfo/Margin/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Sun"
+
+[node name="VSep" type="VSeparator" parent="TopBar/HBox/DayInfo/Margin/HBox"]
+layout_mode = 2
+
+[node name="DayLabel" type="Label" parent="TopBar/HBox/DayInfo/Margin/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Day 1 / 30"
+
+[node name="ResourceBar" type="HBoxContainer" parent="TopBar/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="SciencePill" type="PanelContainer" parent="TopBar/HBox/ResourceBar"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_res_pill")
+
+[node name="HBox" type="HBoxContainer" parent="TopBar/HBox/ResourceBar/SciencePill"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="IconRect" type="TextureRect" parent="TopBar/HBox/ResourceBar/SciencePill/HBox"]
+modulate = Color(0.239216, 0.545098, 0.85098, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("11_science")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="TopBar/HBox/ResourceBar/SciencePill/HBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -2
+
+[node name="TitleLabel" type="Label" parent="TopBar/HBox/ResourceBar/SciencePill/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 11
+text = "Science"
+
+[node name="ValueLabel" type="Label" parent="TopBar/HBox/ResourceBar/SciencePill/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 / 10"
+
+[node name="SourceTag" parent="TopBar/HBox/ResourceBar/SciencePill/HBox" instance=ExtResource("10_sourcetag")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="EnergyPill" type="PanelContainer" parent="TopBar/HBox/ResourceBar"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_res_pill")
+
+[node name="HBox" type="HBoxContainer" parent="TopBar/HBox/ResourceBar/EnergyPill"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="IconRect" type="TextureRect" parent="TopBar/HBox/ResourceBar/EnergyPill/HBox"]
+modulate = Color(0.94902, 0.756863, 0.305882, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("12_bolt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="TopBar/HBox/ResourceBar/EnergyPill/HBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -2
+
+[node name="TitleLabel" type="Label" parent="TopBar/HBox/ResourceBar/EnergyPill/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 11
+text = "Energy today"
+
+[node name="ValueLabel" type="Label" parent="TopBar/HBox/ResourceBar/EnergyPill/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 kWh"
+
+[node name="SourceTag" parent="TopBar/HBox/ResourceBar/EnergyPill/HBox" instance=ExtResource("10_sourcetag")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ShelterPill" type="PanelContainer" parent="TopBar/HBox/ResourceBar"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_res_pill")
+
+[node name="HBox" type="HBoxContainer" parent="TopBar/HBox/ResourceBar/ShelterPill"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="IconRect" type="TextureRect" parent="TopBar/HBox/ResourceBar/ShelterPill/HBox"]
+modulate = Color(0.607843, 0.317647, 0.878431, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("13_shield")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="TopBar/HBox/ResourceBar/ShelterPill/HBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -2
+
+[node name="TitleLabel" type="Label" parent="TopBar/HBox/ResourceBar/ShelterPill/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 11
+text = "Shelter"
+
+[node name="ValueLabel" type="Label" parent="TopBar/HBox/ResourceBar/ShelterPill/HBox/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_font_sizes/font_size = 15
+text = "0.0 g/cm²"
+
+[node name="SourceTag" parent="TopBar/HBox/ResourceBar/ShelterPill/HBox" instance=ExtResource("10_sourcetag")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CenterSpacer2" type="Control" parent="TopBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="FastButton" type="Button" parent="TopBar/HBox"]
+custom_minimum_size = Vector2(130, 44)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Fast: OFF"
+
+[node name="MuteButton" type="Button" parent="TopBar/HBox"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+icon = ExtResource("9_vol_up")
+icon_alignment = 1
+
+[node name="MenuButton" type="Button" parent="TopBar/HBox"]
+custom_minimum_size = Vector2(85, 44)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Menu"
+
+[node name="LeftColumn" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 75.0
+offset_right = 280.0
+offset_bottom = -180.0
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+
+[node name="Gauges" type="VBoxContainer" parent="LeftColumn"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 4
+
+[node name="PowerGauge" parent="LeftColumn/Gauges" instance=ExtResource("7_gauge")]
+custom_minimum_size = Vector2(264, 56)
+layout_mode = 2
+
+[node name="O2Gauge" parent="LeftColumn/Gauges" instance=ExtResource("7_gauge")]
+custom_minimum_size = Vector2(264, 56)
+layout_mode = 2
+
+[node name="CO2Gauge" parent="LeftColumn/Gauges" instance=ExtResource("7_gauge")]
+custom_minimum_size = Vector2(264, 56)
+layout_mode = 2
+
+[node name="WaterGauge" parent="LeftColumn/Gauges" instance=ExtResource("7_gauge")]
+custom_minimum_size = Vector2(264, 56)
+layout_mode = 2
+
+[node name="FoodGauge" parent="LeftColumn/Gauges" instance=ExtResource("7_gauge")]
+custom_minimum_size = Vector2(264, 56)
+layout_mode = 2
+
+[node name="RadGauge" parent="LeftColumn/Gauges" instance=ExtResource("7_gauge")]
+custom_minimum_size = Vector2(264, 56)
+layout_mode = 2
+
+[node name="ShelterGauge" parent="LeftColumn/Gauges" instance=ExtResource("7_gauge")]
+custom_minimum_size = Vector2(264, 56)
+layout_mode = 2
+
+[node name="BottomBar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -112.0
+offset_right = 260.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBox" type="HBoxContainer" parent="BottomBar"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 6
+
+[node name="CrewCard_0" parent="BottomBar/HBox" instance=ExtResource("8_crewcard")]
+layout_mode = 2
+
+[node name="CrewCard_1" parent="BottomBar/HBox" instance=ExtResource("8_crewcard")]
+layout_mode = 2
+crew_index = 1
+
+[node name="CrewCard_2" parent="BottomBar/HBox" instance=ExtResource("8_crewcard")]
+layout_mode = 2
+crew_index = 2
+
+[node name="CrewCard_3" parent="BottomBar/HBox" instance=ExtResource("8_crewcard")]
+layout_mode = 2
+crew_index = 3
+
+[node name="RightControls" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -226.0
+offset_top = -225.0
+offset_right = -16.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="RightControls"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 2
+
+[node name="GreenhouseSwitch" type="Button" parent="RightControls/VBox"]
+custom_minimum_size = Vector2(210, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_disabled_color = Color(0.5, 0.55, 0.65, 0.7)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Greenhouse: OFF"
+
+[node name="ScienceSwitch" type="Button" parent="RightControls/VBox"]
+visible = false
+custom_minimum_size = Vector2(210, 44)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Science Gear: OFF"
+
+[node name="StatusLabel" type="Label" parent="RightControls/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.76, 0.22, 1)
+theme_override_font_sizes/font_size = 15
+text = "Resolving..."
+horizontal_alignment = 2
+
+[node name="EndDayButton" type="Button" parent="RightControls/VBox"]
+custom_minimum_size = Vector2(210, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.08, 0.09, 0.12, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.08, 0.09, 0.12, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_end_day_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_end_day_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_end_day_pressed")
+text = "End Day"
+
+[node name="ToastContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 270.0
+offset_top = 75.0
+offset_right = -250.0
+offset_bottom = 140.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="ToastPanel" type="PanelContainer" parent="ToastContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_toast")
+
+[node name="Margin" type="MarginContainer" parent="ToastContainer/ToastPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 6
+
+[node name="VBox" type="VBoxContainer" parent="ToastContainer/ToastPanel/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Line1" type="Label" parent="ToastContainer/ToastPanel/Margin/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 17
+text = "Day 1 Summary"
+horizontal_alignment = 1
+
+[node name="Line2" type="Label" parent="ToastContainer/ToastPanel/Margin/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 14
+text = "All systems nominal."
+horizontal_alignment = 1
+
+[node name="SelectBannerContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 250.0
+offset_top = 75.0
+offset_right = -240.0
+offset_bottom = 122.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="SelectBannerPanel" type="PanelContainer" parent="SelectBannerContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_toast")
+
+[node name="Margin" type="MarginContainer" parent="SelectBannerContainer/SelectBannerPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 6
+
+[node name="SelectBannerLabel" type="Label" parent="SelectBannerContainer/SelectBannerPanel/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.94902, 0.756863, 0.305882, 1)
+theme_override_font_sizes/font_size = 16
+text = "Where should Rafi work?"
+horizontal_alignment = 1
+
+[node name="FlyLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PauseMenuLayer" type="CanvasLayer" parent="."]
+layer = 15
+visible = false
+
+[node name="Backdrop" type="ColorRect" parent="PauseMenuLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Center" type="CenterContainer" parent="PauseMenuLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="PauseMenuLayer/Center"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pause")
+
+[node name="Margin" type="MarginContainer" parent="PauseMenuLayer/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="PauseMenuLayer/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="PauseMenuLayer/Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Mission Paused"
+horizontal_alignment = 1
+
+[node name="ResumeBtn" type="Button" parent="PauseMenuLayer/Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Resume"
+
+[node name="SourcesBtn" type="Button" parent="PauseMenuLayer/Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Data Sources"
+
+[node name="LangBtn" type="Button" parent="PauseMenuLayer/Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Language: English"
+
+[node name="ScienceBtn" type="Button" parent="PauseMenuLayer/Center/Panel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.85, 1, 1)
+theme_override_colors/font_focus_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_glass_btn_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glass_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glass_btn_pressed")
+text = "Science numbers: OFF"

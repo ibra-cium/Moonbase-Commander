@@ -1,0 +1,200 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Theme" path="res://ui/Theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/title_screen.gd" id="2_script"]
+[ext_resource type="Texture2D" path="res://assets/icons/volume_up.svg" id="3_vol_up"]
+
+[sub_resource type="Environment" id="Environment_title"]
+background_mode = 1
+background_color = Color(0.0196078, 0.0235294, 0.0392157, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.12, 0.15, 0.2, 1)
+ambient_light_energy = 0.4
+tonemap_mode = 3
+
+[sub_resource type="SphereMesh" id="SphereMesh_earth"]
+radius = 0.9
+height = 1.8
+radial_segments = 32
+rings = 16
+
+[sub_resource type="SphereMesh" id="SphereMesh_moon"]
+radius = 1.5
+height = 3.0
+radial_segments = 64
+rings = 32
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="ViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/SubViewport"]
+environment = SubResource("Environment_title")
+
+[node name="SunLight" type="DirectionalLight3D" parent="ViewportContainer/SubViewport"]
+transform = Transform3D(0.819152, 0.286788, -0.496732, 0, 0.866025, 0.5, 0.573576, -0.409576, 0.709406, 0, 0, 0)
+light_color = Color(1, 0.960784, 0.882353, 1)
+light_energy = 1.5
+
+[node name="Camera3D" type="Camera3D" parent="ViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+current = true
+fov = 42.0
+near = 0.1
+far = 100.0
+
+[node name="Stars" type="MultiMeshInstance3D" parent="ViewportContainer/SubViewport"]
+cast_shadow = 0
+
+[node name="Earth" type="MeshInstance3D" parent="ViewportContainer/SubViewport"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 4.2, 2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_earth")
+
+[node name="Moon" type="MeshInstance3D" parent="ViewportContainer/SubViewport"]
+cast_shadow = 0
+mesh = SubResource("SphereMesh_moon")
+
+[node name="UIOverlay" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="UIOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="UIOverlay/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="TopSection" type="VBoxContainer" parent="UIOverlay/Margin/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="Label" parent="UIOverlay/Margin/VBox/TopSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.956863, 0.964706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 44
+text = "Moonbase Commander"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="UIOverlay/Margin/VBox/TopSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 1)
+theme_override_font_sizes/font_size = 18
+text = "Junior Astronaut Training"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="UIOverlay/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BottomSection" type="VBoxContainer" parent="UIOverlay/Margin/VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="UIOverlay/Margin/VBox/BottomSection"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="StartButton" type="Button" parent="UIOverlay/Margin/VBox/BottomSection/ButtonsVBox"]
+custom_minimum_size = Vector2(280, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[node name="SecondaryHBox" type="HBoxContainer" parent="UIOverlay/Margin/VBox/BottomSection/ButtonsVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="LangButton" type="Button" parent="UIOverlay/Margin/VBox/BottomSection/ButtonsVBox/SecondaryHBox"]
+custom_minimum_size = Vector2(132, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "বাংলা"
+
+[node name="SourcesButton" type="Button" parent="UIOverlay/Margin/VBox/BottomSection/ButtonsVBox/SecondaryHBox"]
+custom_minimum_size = Vector2(132, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Data Sources"
+
+[node name="CreditLabel" type="Label" parent="UIOverlay/Margin/VBox/BottomSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.603922, 0.639216, 0.698039, 0.75)
+theme_override_font_sizes/font_size = 13
+text = "Moon: NASA SVS CGI Moon Kit (LRO data) · Earth: NASA Earth Observatory"
+horizontal_alignment = 1
+
+[node name="TopRightMargin" type="MarginContainer" parent="UIOverlay"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_bottom = 88.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+
+[node name="MuteButton" type="Button" parent="UIOverlay/TopRightMargin"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+icon = ExtResource("3_vol_up")
+icon_alignment = 1
+
+[node name="FadeRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+

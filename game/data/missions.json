@@ -1,0 +1,84 @@
+[
+  {
+    "id": "M1",
+    "name_key": "MISSION_M1_NAME",
+    "goal_key": "MISSION_M1_GOAL",
+    "days_id": "MISSION_1_DAYS",
+    "force": {
+      "storm_day": 0,
+      "recycler_day": 0,
+      "meteoroid_day": 0
+    },
+    "hidden_items": ["battery", "reactor", "greenhouse", "shield"],
+    "locked_items": {},
+    "start_cargo": {
+      "solar": 10,
+      "battery": 0,
+      "reactor": 0,
+      "greenhouse": 0,
+      "o2": 2,
+      "water": 4,
+      "food": 5,
+      "shield": 0
+    }
+  },
+  {
+    "id": "M2",
+    "name_key": "MISSION_M2_NAME",
+    "goal_key": "MISSION_M2_GOAL",
+    "days_id": "MISSION_2_DAYS",
+    "force": {
+      "storm_day": 0,
+      "recycler_day": "MISSION_2_RECYCLER_DAY",
+      "meteoroid_day": 0
+    },
+    "hidden_items": ["battery", "reactor", "greenhouse", "shield"],
+    "locked_items": {
+      "water": 2
+    },
+    "start_cargo": {
+      "solar": 20,
+      "battery": 4,
+      "reactor": 2,
+      "greenhouse": 0,
+      "o2": 2,
+      "water": 2,
+      "food": 5,
+      "shield": 10
+    }
+  },
+  {
+    "id": "M3",
+    "name_key": "MISSION_M3_NAME",
+    "goal_key": "MISSION_M3_GOAL",
+    "days_id": "MISSION_3_DAYS",
+    "force": {
+      "storm_day": "MISSION_3_STORM_DAY",
+      "recycler_day": 0,
+      "meteoroid_day": 0
+    },
+    "hidden_items": ["battery", "reactor", "greenhouse"],
+    "locked_items": {},
+    "start_cargo": {
+      "solar": 20,
+      "battery": 4,
+      "reactor": 2,
+      "greenhouse": 0,
+      "o2": 2,
+      "water": 4,
+      "food": 5,
+      "shield": 0
+    }
+  },
+  {
+    "id": "M4",
+    "name_key": "MISSION_M4_NAME",
+    "goal_key": "MISSION_M4_GOAL",
+    "days_id": "MISSION_DAYS",
+    "force": {},
+    "hidden_items": [],
+    "locked_items": {},
+    "start_cargo": {}
+  }
+]
+

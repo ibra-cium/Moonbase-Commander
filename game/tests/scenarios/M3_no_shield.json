@@ -1,0 +1,25 @@
+{
+  "id": "M3_no_shield",
+  "title": "Mission 3 — Solar storm with no shield",
+  "mission": "M3",
+  "cargo": {
+    "solar": 20,
+    "battery": 4,
+    "reactor": 2,
+    "greenhouse": 0,
+    "o2": 2,
+    "water": 4,
+    "food": 5,
+    "shield": 0
+  },
+  "seed": 1,
+  "rule": "REST",
+  "force": {},
+  "expect": {
+    "outcome": "EVAC_RADIATION",
+    "end_day": 8,
+    "stars": 0,
+    "root": "ROOT_SHIELD"
+  }
+}
+

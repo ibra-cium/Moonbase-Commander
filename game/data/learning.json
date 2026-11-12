@@ -1,0 +1,689 @@
+{
+  "_meta": {
+    "about": "Junior astronaut training content: Mission Control briefings, one guess-first question per mission, lessons, ranks and the Moon Science Cards. Text with a fact_id comes from facts.json. Numbers in {ID|fmt} come from constants.json via Constants.v (fmt: 0 = whole number, 1 = one decimal, pct = percent, k = rounded to thousands with commas). 'bn' is filled by the team (Samia); when empty the game shows English.",
+    "added": "2026-11-11, drafted with Claude (AI) - team checks each line against its source"
+  },
+  "mission_control": {
+    "en": "Mission Control",
+    "bn": ""
+  },
+  "ranks": [
+    {
+      "id": "CADET",
+      "after": "",
+      "name": {
+        "en": "Cadet",
+        "bn": ""
+      }
+    },
+    {
+      "id": "JUNIOR",
+      "after": "M1",
+      "name": {
+        "en": "Junior Astronaut",
+        "bn": ""
+      }
+    },
+    {
+      "id": "SPECIALIST",
+      "after": "M2",
+      "name": {
+        "en": "Mission Specialist",
+        "bn": ""
+      }
+    },
+    {
+      "id": "ENGINEER",
+      "after": "M3",
+      "name": {
+        "en": "Flight Engineer",
+        "bn": ""
+      }
+    },
+    {
+      "id": "COMMANDER",
+      "after": "M4",
+      "name": {
+        "en": "Moonbase Commander",
+        "bn": ""
+      }
+    }
+  ],
+  "missions": {
+    "M1": {
+      "briefing": [
+        {
+          "title": {
+            "en": "Welcome, Cadet!",
+            "bn": ""
+          },
+          "text": {
+            "en": "Your crew of 4 needs air, water and food every day. Everything must come with you on the lander.",
+            "bn": ""
+          },
+          "fact_id": null
+        },
+        {
+          "title": {
+            "en": "Real NASA fact",
+            "bn": ""
+          },
+          "text": null,
+          "fact_id": "F05"
+        }
+      ],
+      "question": {
+        "text": {
+          "en": "How much water does ONE astronaut use in a day?",
+          "bn": ""
+        },
+        "options": [
+          {
+            "en": "About 1 glass",
+            "bn": ""
+          },
+          {
+            "en": "About 3 big bottles",
+            "bn": ""
+          },
+          {
+            "en": "About 30 big bottles",
+            "bn": ""
+          }
+        ],
+        "correct": 1,
+        "explain": {
+          "en": "About {WATER_KG_PERSON_DAY|1} kg a day – that's about three 1-litre bottles for each astronaut!",
+          "bn": ""
+        },
+        "constant_ids": [
+          "WATER_KG_PERSON_DAY"
+        ]
+      },
+      "lesson": {
+        "en": "Astronauts need air, water and food every single day – and all of it must fit on the lander.",
+        "bn": ""
+      },
+      "nasa_now_fact": "F27"
+    },
+    "M2": {
+      "briefing": [
+        {
+          "title": {
+            "en": "Machines can break",
+            "bn": ""
+          },
+          "text": {
+            "en": "Even on the Moon, machines break. When one does, send an astronaut to Repair it – fast!",
+            "bn": ""
+          },
+          "fact_id": null
+        },
+        {
+          "title": {
+            "en": "Real NASA fact",
+            "bn": ""
+          },
+          "text": null,
+          "fact_id": "F22"
+        }
+      ],
+      "question": {
+        "text": {
+          "en": "On the space station, how much of their water do astronauts get back by recycling?",
+          "bn": ""
+        },
+        "options": [
+          {
+            "en": "About 10%",
+            "bn": ""
+          },
+          {
+            "en": "About half",
+            "bn": ""
+          },
+          {
+            "en": "About 98%",
+            "bn": ""
+          }
+        ],
+        "correct": 2,
+        "explain": {
+          "en": "About {WATER_RECOVERY_FULL|pct}! Even sweat and urine are cleaned into drinking water.",
+          "bn": ""
+        },
+        "constant_ids": [
+          "WATER_RECOVERY_FULL"
+        ]
+      },
+      "lesson": {
+        "en": "Recycling water saves a lot of weight. Fix broken machines fast!",
+        "bn": ""
+      },
+      "nasa_now_fact": "F28"
+    },
+    "M3": {
+      "briefing": [
+        {
+          "title": {
+            "en": "Storm warning",
+            "bn": ""
+          },
+          "text": null,
+          "fact_id": "F11"
+        },
+        {
+          "title": {
+            "en": "Build a safe shelter",
+            "bn": ""
+          },
+          "text": {
+            "en": "Before the storm comes, pack shield water or send crew to Dig Moon soil over the shelter.",
+            "bn": ""
+          },
+          "fact_id": null
+        }
+      ],
+      "question": {
+        "text": {
+          "en": "What is good at blocking dangerous storm radiation?",
+          "bn": ""
+        },
+        "options": [
+          {
+            "en": "Bright lights",
+            "bn": ""
+          },
+          {
+            "en": "Cold air",
+            "bn": ""
+          },
+          {
+            "en": "Water and Moon soil",
+            "bn": ""
+          }
+        ],
+        "correct": 2,
+        "explain": {
+          "en": "Water and Moon soil! 15 g/cm² of water cuts the storm dose from {SPE_DOSE_HABITAT_NO_EXTRA_MSV|0} to about {SPE_DOSE_SHIELD_15|0} mSv.",
+          "bn": ""
+        },
+        "constant_ids": [
+          "SPE_DOSE_SHIELD_15",
+          "SPE_DOSE_HABITAT_NO_EXTRA_MSV"
+        ]
+      },
+      "lesson": {
+        "en": "Water and Moon soil block radiation. Hide in the shelter when a solar storm comes.",
+        "bn": ""
+      },
+      "nasa_now_fact": "F24"
+    },
+    "M4": {
+      "briefing": [
+        {
+          "title": {
+            "en": "The big test",
+            "bn": ""
+          },
+          "text": {
+            "en": "Your base must survive the long Moon night. Solar panels make no power in the dark.",
+            "bn": ""
+          },
+          "fact_id": null
+        },
+        {
+          "title": {
+            "en": "Real NASA fact",
+            "bn": ""
+          },
+          "text": null,
+          "fact_id": "F02"
+        }
+      ],
+      "question": {
+        "text": {
+          "en": "How long is one night on the Moon?",
+          "bn": ""
+        },
+        "options": [
+          {
+            "en": "About 12 hours",
+            "bn": ""
+          },
+          {
+            "en": "About 2 weeks",
+            "bn": ""
+          },
+          {
+            "en": "About 1 year",
+            "bn": ""
+          }
+        ],
+        "correct": 1,
+        "explain": {
+          "en": "About 2 weeks! For our base, batteries for the whole night would weigh about {NIGHT_BATTERY_MASS_KG|k} kg – but the lander carries only {CARGO_LIMIT_KG|k} kg.",
+          "bn": ""
+        },
+        "constant_ids": [
+          "NIGHT_DAYS",
+          "NIGHT_BATTERY_MASS_KG",
+          "CARGO_LIMIT_KG"
+        ]
+      },
+      "lesson": {
+        "en": "The Moon night lasts about 2 weeks. Solar panels stop and batteries are too heavy – a small reactor keeps the base alive.",
+        "bn": ""
+      },
+      "nasa_now_fact": "F25"
+    }
+  },
+  "cards": [
+    {
+      "fact_id": "F12",
+      "title": {
+        "en": "Moon Gravity",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "landed",
+      "hint": {
+        "en": "Land on the Moon",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F10",
+      "title": {
+        "en": "Moon Radiation",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "first_outside_job",
+      "hint": {
+        "en": "Send someone to work outside",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F23",
+      "title": {
+        "en": "Moon-Soil Shield",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "first_regolith",
+      "hint": {
+        "en": "Dig Moon soil over the shelter",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F21",
+      "title": {
+        "en": "Moon Rocks",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "science_1",
+      "hint": {
+        "en": "Earn 1 science point",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F17",
+      "title": {
+        "en": "Ice in the Dark",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "science_3",
+      "hint": {
+        "en": "Earn 3 science points",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F20",
+      "title": {
+        "en": "How the Moon Was Born",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "science_6",
+      "hint": {
+        "en": "Earn 6 science points",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F18",
+      "title": {
+        "en": "Moonquakes",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "science_10",
+      "hint": {
+        "en": "Earn 10 science points",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F19",
+      "title": {
+        "en": "Drifting Away",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "science_15",
+      "hint": {
+        "en": "Earn 15 science points",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F15",
+      "title": {
+        "en": "Sharp Dust",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "dusty",
+      "hint": {
+        "en": "Let dust build up on the panels",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F04",
+      "title": {
+        "en": "Dusty Panels",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "first_clean",
+      "hint": {
+        "en": "Clean the solar panels",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F16",
+      "title": {
+        "en": "Space Rock Hit",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "meteoroid",
+      "hint": {
+        "en": "Survive a meteoroid strike",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F06",
+      "title": {
+        "en": "Recycled Water",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "recycler_broke",
+      "hint": {
+        "en": "The water recycler breaks",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F22",
+      "title": {
+        "en": "Making Oxygen",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "briefing_M2",
+      "hint": {
+        "en": "Mission 2 briefing",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F05",
+      "title": {
+        "en": "Every Breath",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "briefing_M1",
+      "hint": {
+        "en": "Mission 1 briefing",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F11",
+      "title": {
+        "en": "Storm Warning",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "storm_warning",
+      "hint": {
+        "en": "A solar storm is coming",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F09",
+      "title": {
+        "en": "The 1972 Storm",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "storm_survived",
+      "hint": {
+        "en": "Survive a solar storm",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F01",
+      "title": {
+        "en": "The Long Night",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "sunset",
+      "hint": {
+        "en": "See the sunset on Day 15",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F02",
+      "title": {
+        "en": "Hot and Cold",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "briefing_M4",
+      "hint": {
+        "en": "Mission 4 briefing",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F25",
+      "title": {
+        "en": "A Moon Reactor",
+        "bn": ""
+      },
+      "category": "nasa",
+      "trigger": "night_reactor",
+      "hint": {
+        "en": "Run a reactor at night",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F26",
+      "title": {
+        "en": "Watts on the Moon",
+        "bn": ""
+      },
+      "category": "nasa",
+      "trigger": "night_battery_low",
+      "hint": {
+        "en": "Battery gets low at night",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F07",
+      "title": {
+        "en": "Space Lettuce",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "first_farm",
+      "hint": {
+        "en": "Grow plants in the greenhouse",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F29",
+      "title": {
+        "en": "Sleep in Space",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "crew_tired",
+      "hint": {
+        "en": "An astronaut gets tired",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F27",
+      "title": {
+        "en": "Break the Ice",
+        "bn": ""
+      },
+      "category": "nasa",
+      "trigger": "debrief_M1",
+      "hint": {
+        "en": "Finish Mission 1",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F28",
+      "title": {
+        "en": "LunaRecycle",
+        "bn": ""
+      },
+      "category": "nasa",
+      "trigger": "debrief_M2",
+      "hint": {
+        "en": "Finish Mission 2",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F24",
+      "title": {
+        "en": "Helga and Zohar",
+        "bn": ""
+      },
+      "category": "nasa",
+      "trigger": "debrief_M3",
+      "hint": {
+        "en": "Finish Mission 3",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F13",
+      "title": {
+        "en": "The Far Side",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "quiet_day",
+      "hint": {
+        "en": "Mission Control: Did you know?",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F03",
+      "title": {
+        "en": "Peaks of Light",
+        "bn": ""
+      },
+      "category": "moon",
+      "trigger": "quiet_day",
+      "hint": {
+        "en": "Mission Control: Did you know?",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F14",
+      "title": {
+        "en": "Why Astronauts Float",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "quiet_day",
+      "hint": {
+        "en": "Mission Control: Did you know?",
+        "bn": ""
+      }
+    },
+    {
+      "fact_id": "F08",
+      "title": {
+        "en": "Space Workout",
+        "bn": ""
+      },
+      "category": "survival",
+      "trigger": "quiet_day",
+      "hint": {
+        "en": "Mission Control: Did you know?",
+        "bn": ""
+      }
+    }
+  ],
+  "science_thresholds": [
+    [
+      1,
+      "F21"
+    ],
+    [
+      3,
+      "F17"
+    ],
+    [
+      6,
+      "F20"
+    ],
+    [
+      10,
+      "F18"
+    ],
+    [
+      15,
+      "F19"
+    ]
+  ],
+  "quiet_day_pool": [
+    "F13",
+    "F03",
+    "F14",
+    "F08",
+    "F12"
+  ]
+}
