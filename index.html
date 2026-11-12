@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+		<meta name="theme-color" content="#05060A">
+		<title>Moonbase Commander</title>
+		<style>
+:root {
+	color-scheme: dark;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+	height: 100dvh;
+	background-color: #05060A;
+	color: #F3F4F6;
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Bengali', sans-serif;
+	overflow: hidden;
+	overscroll-behavior: none;
+	touch-action: none;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
+
+#canvas {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	touch-action: none;
+}
+
+#canvas:focus {
+	outline: none;
+}
+
+#safe-area-probe {
+	position: fixed;
+	inset: 0;
+	padding-top: env(safe-area-inset-top, 0px);
+	padding-right: env(safe-area-inset-right, 0px);
+	padding-bottom: env(safe-area-inset-bottom, 0px);
+	padding-left: env(safe-area-inset-left, 0px);
+	visibility: hidden;
+	pointer-events: none;
+	z-index: -1;
+}
+
+#status {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding:
+		max(20px, env(safe-area-inset-top, 0px))
+		max(24px, env(safe-area-inset-right, 0px))
+		max(20px, env(safe-area-inset-bottom, 0px))
+		max(24px, env(safe-area-inset-left, 0px));
+	background: radial-gradient(circle at 50% 35%, #121D33 0%, #070B14 55%, #05060A 100%);
+	z-index: 10;
+	visibility: hidden;
+}
+
+.loader-card {
+	width: min(440px, 88vw);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 12px;
+}
+
+.loader-emblem {
+	width: 68px;
+	height: 68px;
+	margin-bottom: 4px;
+}
+
+.loader-title {
+	margin: 0;
+	font-size: clamp(22px, 4.5vw, 32px);
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: #F3F4F6;
+}
+
+.loader-subtitle {
+	margin: 0;
+	font-size: clamp(13px, 2.4vw, 15px);
+	color: #9AA6B8;
+}
+
+.progress-wrap {
+	width: 100%;
+	margin-top: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.progress-track {
+	width: 100%;
+	height: 10px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(114, 184, 255, 0.25);
+	overflow: hidden;
+}
+
+#loading-bar-fill {
+	height: 100%;
+	width: 6%;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #3B82F6 0%, #60EFFF 100%);
+	transition: width 120ms ease-out;
+}
+
+#loading-bar-fill.indeterminate {
+	width: 35%;
+	animation: pulse-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-slide {
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(300%); }
+}
+
+.progress-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 13px;
+	color: #B6C2D4;
+}
+
+#status-progress {
+	display: none;
+}
+
+#status-notice {
+	display: none;
+	background-color: #3D1F28;
+	border-radius: 10px;
+	border: 1px solid #9B3943;
+	color: #F3F4F6;
+	line-height: 1.4;
+	margin-top: 10px;
+	padding: 12px 16px;
+	text-align: center;
+	font-size: 14px;
+}
+
+#rotate-hint {
+	position: fixed;
+	inset: 0;
+	z-index: 20;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 14px;
+	padding: 24px;
+	background: rgba(5, 6, 10, 0.94);
+	text-align: center;
+}
+
+#rotate-hint.visible {
+	display: flex;
+}
+
+.rotate-icon {
+	width: 72px;
+	height: 72px;
+	color: #60EFFF;
+	animation: rotate-phone 2.2s ease-in-out infinite;
+}
+
+@keyframes rotate-phone {
+	0%, 20% { transform: rotate(0deg); }
+	55%, 80% { transform: rotate(-90deg); }
+	100% { transform: rotate(-90deg); }
+}
+
+.rotate-title {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+	color: #F3F4F6;
+}
+
+.rotate-sub {
+	margin: 0;
+	font-size: 15px;
+	color: #9AA6B8;
+	max-width: 300px;
+	line-height: 1.45;
+}
+
+#rotate-dismiss {
+	margin-top: 8px;
+	padding: 10px 18px;
+	border-radius: 999px;
+	border: 1px solid rgba(255, 255, 255, 0.24);
+	background: rgba(255, 255, 255, 0.08);
+	color: #CBD5E1;
+	font-size: 13px;
+	cursor: pointer;
+}
+		</style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+	</head>
+	<body>
+		<div id="safe-area-probe" aria-hidden="true"></div>
+
+		<canvas id="canvas">
+			Your browser does not support the canvas tag.
+		</canvas>
+
+		<noscript>
+			Your browser does not support JavaScript.
+		</noscript>
+
+		<div id="status">
+			<div class="loader-card">
+				<svg class="loader-emblem" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+					<circle cx="32" cy="32" r="24" fill="#13223D" stroke="#60EFFF" stroke-width="2" />
+					<path d="M40 16C30 18 24 27 26 37C28 45 35 50 43 49C32 52 21 44 19 32C17 21 27 12 40 16Z" fill="#DCE6F5" />
+					<ellipse cx="32" cy="34" rx="28" ry="10" transform="rotate(-18 32 34)" stroke="#F2C14E" stroke-width="1.6" stroke-dasharray="4 3" />
+					<circle cx="51" cy="24" r="3" fill="#F2C14E" />
+				</svg>
+				<h1 class="loader-title">MOONBASE COMMANDER</h1>
+				<p class="loader-subtitle">Lunar South Pole Mission Trainer</p>
+				<div class="progress-wrap">
+					<div class="progress-track">
+						<div id="loading-bar-fill" class="indeterminate"></div>
+					</div>
+					<div class="progress-meta">
+						<span id="status-label">Loading Moon base...</span>
+						<span id="status-percent">0%</span>
+					</div>
+				</div>
+				<progress id="status-progress"></progress>
+				<div id="status-notice"></div>
+			</div>
+		</div>
+
+		<div id="rotate-hint" role="dialog" aria-live="polite" aria-label="Rotate your phone to landscape">
+			<svg class="rotate-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+				<rect x="20" y="10" width="24" height="44" rx="5" stroke="currentColor" stroke-width="2.5" fill="#101B30" />
+				<circle cx="32" cy="48" r="2" fill="currentColor" />
+				<path d="M12 28C12 18 18 11 26 9" stroke="#F2C14E" stroke-width="2" stroke-linecap="round" />
+				<path d="M23 6L28 9L24 13" stroke="#F2C14E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+			<h2 class="rotate-title">Rotate your phone to landscape</h2>
+			<p class="rotate-sub">Moonbase Commander is built for sideways play.<br>ফোনটি অনুভূমিকভাবে ঘোরান।</p>
+			<button id="rotate-dismiss" type="button">Continue anyway</button>
+		</div>
+
+		<script src="index.js?v=2"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":5151784,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_THREADS_ENABLED = false;
+const engine = new Engine(GODOT_CONFIG);
+
+(function () {
+	const safeProbe = document.getElementById('safe-area-probe');
+	function refreshSafeInsets() {
+		if (!safeProbe) {
+			return;
+		}
+		const cs = getComputedStyle(safeProbe);
+		window.__moonbaseSafeInsets = {
+			top: parseFloat(cs.paddingTop) || 0,
+			right: parseFloat(cs.paddingRight) || 0,
+			bottom: parseFloat(cs.paddingBottom) || 0,
+			left: parseFloat(cs.paddingLeft) || 0,
+			vw: window.innerWidth || 0,
+			vh: window.innerHeight || 0
+		};
+	}
+
+	const rotateHint = document.getElementById('rotate-hint');
+	const rotateDismiss = document.getElementById('rotate-dismiss');
+	let portraitDismissed = false;
+
+	function isTouchViewport() {
+		return window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+	}
+
+	function refreshOrientationHint() {
+		refreshSafeInsets();
+		if (!rotateHint) {
+			return;
+		}
+		const isPortrait = window.innerHeight > window.innerWidth;
+		if (!isPortrait) {
+			portraitDismissed = false;
+		}
+		const show = isPortrait && isTouchViewport() && !portraitDismissed;
+		rotateHint.classList.toggle('visible', show);
+	}
+
+	if (rotateDismiss) {
+		rotateDismiss.addEventListener('click', function () {
+			portraitDismissed = true;
+			rotateHint.classList.remove('visible');
+		});
+	}
+
+	window.addEventListener('resize', refreshOrientationHint, { passive: true });
+	window.addEventListener('orientationchange', function () {
+		setTimeout(refreshOrientationHint, 120);
+	}, { passive: true });
+	refreshOrientationHint();
+
+	const statusOverlay = document.getElementById('status');
+	const statusProgress = document.getElementById('status-progress');
+	const barFill = document.getElementById('loading-bar-fill');
+	const statusPercent = document.getElementById('status-percent');
+	const statusLabel = document.getElementById('status-label');
+	const statusNotice = document.getElementById('status-notice');
+
+	const fileSizes = (GODOT_CONFIG && GODOT_CONFIG.fileSizes) ? GODOT_CONFIG.fileSizes : {};
+	const fallbackTotal = Object.keys(fileSizes).reduce(function (acc, k) {
+		return acc + (Number(fileSizes[k]) || 0);
+	}, 0);
+
+	let initializing = true;
+	let statusMode = '';
+
+	function setStatusMode(mode) {
+		if (statusMode === mode || !initializing) {
+			return;
+		}
+		if (mode === 'hidden') {
+			statusOverlay.remove();
+			initializing = false;
+			refreshSafeInsets();
+			return;
+		}
+		statusOverlay.style.visibility = 'visible';
+		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
+		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
+		statusMode = mode;
+	}
+
+	function setStatusNotice(text) {
+		while (statusNotice.lastChild) {
+			statusNotice.removeChild(statusNotice.lastChild);
+		}
+		const lines = text.split('\n');
+		lines.forEach((line) => {
+			statusNotice.appendChild(document.createTextNode(line));
+			statusNotice.appendChild(document.createElement('br'));
+		});
+	}
+
+	function displayFailureNotice(err) {
+		console.error(err);
+		if (statusLabel) {
+			statusLabel.textContent = 'Could not start Mission Trainer';
+		}
+		if (err instanceof Error) {
+			setStatusNotice(err.message);
+		} else if (typeof err === 'string') {
+			setStatusNotice(err);
+		} else {
+			setStatusNotice('An unknown error occurred.');
+		}
+		setStatusMode('notice');
+		initializing = false;
+	}
+
+	const missing = Engine.getMissingFeatures({
+		threads: GODOT_THREADS_ENABLED,
+	}).filter(function (x) { return !x.includes('Secure Context'); });
+
+	if (missing.length !== 0) {
+		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
+			let serviceWorkerRegistrationPromise;
+			try {
+				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
+			} catch (err) {
+				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
+			}
+			Promise.race([
+				serviceWorkerRegistrationPromise.then((registration) => {
+					if (registration != null) {
+						return Promise.reject(new Error('Service worker already exists.'));
+					}
+					return registration;
+				}).then(() => engine.installServiceWorker()),
+				new Promise((resolve) => {
+					setTimeout(() => resolve(), 2000);
+				}),
+			]).then(() => {
+				window.location.reload();
+			}).catch((err) => {
+				console.error('Error while registering service worker:', err);
+			});
+		} else {
+			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
+			displayFailureNotice(missingMsg + missing.join('\n'));
+		}
+	} else {
+		setStatusMode('progress');
+		engine.startGame({
+			'onProgress': function (current, total) {
+				const denom = (total && total > 0) ? total : fallbackTotal;
+				if (current > 0 && denom > 0) {
+					const pct = Math.min(100, Math.max(1, Math.round((current / denom) * 100)));
+					statusProgress.value = current;
+					statusProgress.max = denom;
+					if (barFill) {
+						barFill.classList.remove('indeterminate');
+						barFill.style.width = pct + '%';
+					}
+					if (statusPercent) {
+						statusPercent.textContent = pct + '%';
+					}
+					if (statusLabel && pct >= 95) {
+						statusLabel.textContent = 'Starting simulation...';
+					}
+				} else {
+					statusProgress.removeAttribute('value');
+					statusProgress.removeAttribute('max');
+					if (barFill) {
+						barFill.classList.add('indeterminate');
+					}
+				}
+			},
+		}).then(() => {
+			if (barFill) {
+				barFill.classList.remove('indeterminate');
+				barFill.style.width = '100%';
+			}
+			if (statusPercent) {
+				statusPercent.textContent = '100%';
+			}
+			setStatusMode('hidden');
+		}, displayFailureNotice);
+	}
+}());
+		</script>
+	</body>
+</html>
+
+
